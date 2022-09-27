@@ -26,7 +26,7 @@ from setuptools import find_packages, setup
 setup(
     name='pyIpnHeuristic',
     packages=find_packages(exclude=['tests']),
-    version='0.2.0',
+    version='0.2.1',
     description='pyIpnHeuristic is a pure Python implementation of some heuristic algorithms',
     long_description="""pyIpnHeuristic is a pure Python implementation of some heuristic algorithms for the National
     Polytechnic Institute of Mexico. For more information on pyIpnHeuristic, visit the `GitHub project page 

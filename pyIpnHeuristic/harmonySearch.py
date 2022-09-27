@@ -11,7 +11,6 @@ class HarmonySearch(PopulationBasedHeuristics):
         super().__init__(*args, **params)
         self.hcmr = params.get("hcmr", 0.95)
         self.par = params.get("par", 0.10)
-        self.epsilon = params.get("epsilon", 10.**-3)
         self.alpha = params.get("alpha", 1.)
         
     def create_from_population(self) -> dict:

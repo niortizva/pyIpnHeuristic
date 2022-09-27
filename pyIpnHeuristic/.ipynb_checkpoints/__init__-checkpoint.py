@@ -1,6 +1,7 @@
 from abc import abstractmethod
 from typing import Callable, Any, List
 import random
+from .benchmark import *
 
 
 class PopulationBasedHeuristics(object):
@@ -10,7 +11,7 @@ class PopulationBasedHeuristics(object):
 
     def __init__(self, objective_function: Callable[..., Any], soft_constrains: List[Callable[..., Any]] = None,
                  hard_constrains: List[Callable[..., Any]] = None, ranges: list = None, population_size: int = 32,
-                 **params):
+                 smooth: bool = False, epsilon: float = 10**-4, **params):
         """
         Initialize Population Based Heuristic algorithm.
         
@@ -68,6 +69,8 @@ class PopulationBasedHeuristics(object):
         self.population_size = population_size
         self.population: List[dict] = []
         self.history: List[dict] = []
+        self.smooth: bool = smooth
+        self.epsilon: float = epsilon
         
         # Check if population has enough size
         if self.population_size <= 0:
@@ -156,12 +159,16 @@ class PopulationBasedHeuristics(object):
         :return dict: Evaluated Individual
         """
         individual["fx"] = self.objective_function(*individual["x"])
-        individual["gx"] = sum([self.soft_constrains[m1](*individual["x"]) *
-                               (self.soft_constrains[m1](*individual["x"]) > 0)
-                               for m1 in range(len(self.soft_constrains))])
-        individual["hx"] = sum([abs(self.hard_constrains[m1](*individual["x"])) *
-                               (self.hard_constrains[m1](*individual["x"]) != 0)
-                               for m1 in range(len(self.hard_constrains))])
+        individual["gx"] = sum([gi(*individual["x"]) * (gi(*individual["x"]) > 0)
+                               for gi in self.soft_constrains])
+        if self.smooth:
+            individual["hx"] = sum([(abs(hi(*individual["x"])) - self.epsilon) * 
+                                    (abs(hi(*individual["x"])) - self.epsilon > 0) 
+                                    for hi in self.hard_constrains])
+        else:
+            individual["hx"] = sum([abs(hi(*individual["x"])) * (hi(*individual["x"]) != 0) 
+                                    for hi in self.hard_constrains])
+            
         return individual
     
     @staticmethod

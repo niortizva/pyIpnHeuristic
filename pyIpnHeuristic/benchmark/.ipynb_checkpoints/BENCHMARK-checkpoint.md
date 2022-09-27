@@ -70,3 +70,11 @@ subject to:
 $$g_1(\mathbf{x}) = -(x_1-5)^2 - (x_2-5)^2 + 100 \leq 0 $$
 $$g_2(\mathbf{x}) = (x_1-6)^2 + (x_2-5)^2 - 82.81 \leq 0 $$
 where: $13 \leq x_1 \leq 100$, $0 \leq x_2 \leq 100$
+
+## Problem G11:
+
+Minimize: 
+$$f(\mathbf{x}) = x_1^{2} + (x_{2} - 1)^{2}$$
+subject to:
+$$h_1(\mathbf{x}) = x_2 -x_{1}^{2} \leq 0 $$
+where: $-1 \leq x_1 \leq 1$, $-1 \leq x_2 \leq 1$

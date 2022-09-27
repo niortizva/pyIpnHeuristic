@@ -14,7 +14,6 @@ class DifferentialEvolution(PopulationBasedHeuristics):
         # Differential Evolution parameters
         self.f = params.get("f", 0.5)
         self.cr = params.get("cr", 0.1)
-        self.epsilon = params.get("epsilon", 10.**-3)
 
         self.index_list = [i for i in range(self.population_size)]
         
