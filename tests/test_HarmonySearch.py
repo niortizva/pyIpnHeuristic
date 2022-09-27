@@ -1,14 +1,12 @@
 from pyIpnHeuristic.harmonySearch import HarmonySearch
-from pyIpnHeuristic.examples import get_pg06
+from pyIpnHeuristic.benchmark import get_pg06
 
 
-def test_harmonySearch():
+def test_harmony_search():
 
     objective_function, g, h, ranges = get_pg06()
-
-    ranges = [[13, 100], [0, 100]]
             
-    harmonySearch = HarmonySearch(
+    harmony_search = HarmonySearch(
         objective_function,
         soft_constrains=g,
         hard_constrains=h,
@@ -20,6 +18,6 @@ def test_harmonySearch():
         alpha=10**-2
     )
 
-    harmonySearch.search(iterations=100000, save_history=True)
+    harmony_search.search(iterations=100000, save_history=True)
     
-    return harmonySearch.population
+    return harmony_search.population

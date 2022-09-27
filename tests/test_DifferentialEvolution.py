@@ -1,14 +1,12 @@
 from pyIpnHeuristic.differentialEvolution import DifferentialEvolution
-from pyIpnHeuristic.examples import get_pg06
+from pyIpnHeuristic.benchmark import get_pg06
 
 
-def test_differentialEvolution():
+def test_differential_evolution():
 
     objective_function, g, h, ranges = get_pg06()
-
-    ranges = [[13, 100], [0, 100]]
             
-    differentialEvolution = DifferentialEvolution(
+    differential_evolution = DifferentialEvolution(
         objective_function,
         soft_constrains=g,
         hard_constrains=h,
@@ -19,6 +17,6 @@ def test_differentialEvolution():
         epsilon=10**-4,
     )
 
-    differentialEvolution.search(iterations=100000, save_history=True)
+    differential_evolution.search(iterations=100000, save_history=True)
     
-    return differentialEvolution.population
+    return differential_evolution.population

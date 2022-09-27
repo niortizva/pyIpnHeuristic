@@ -1,18 +1,8 @@
 from pyIpnHeuristic import PopulationBasedHeuristics
-from pyIpnHeuristic.examples import get_pg06
+from pyIpnHeuristic.benchmark import get_pg06
 
 
-def objective_function(*x):
-    return (x[0] - 10)**3 + (x[1] - 20)**3
-
-def g1(*x):
-    return -(x[0] - 5)**2 - (x[1] - 5)**2 + 100
-
-def g2(*x):
-    return (x[0] - 6)**2 + (x[1] - 5)**2 - 82.81
-
-
-def test_populationBasedHeuristics():
+def test_population_based_heuristics():
 
     objective_function, g, h, ranges = get_pg06()
     

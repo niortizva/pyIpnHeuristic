@@ -1,6 +1,7 @@
 from abc import abstractmethod
 from typing import Callable, Any, List
 import random
+from .benchmark import *
 
 
 class PopulationBasedHeuristics(object):
