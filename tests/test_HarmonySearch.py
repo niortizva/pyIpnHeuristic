@@ -1,16 +1,16 @@
 from pyIpnHeuristic.harmonySearch import HarmonySearch
-from pyIpnHeuristic.benchmark import get_pg06
+from pyIpnHeuristic.benchmark import get_pg01
 
 
 def test_harmony_search():
 
-    objective_function, g, h, ranges = get_pg06()
+    problem_parameters = get_pg01()
             
     harmony_search = HarmonySearch(
-        objective_function,
-        soft_constrains=g,
-        hard_constrains=h,
-        ranges=ranges,
+        problem_parameters.get("objective_function"),
+        soft_constrains=problem_parameters.get("gx"),
+        hard_constrains=problem_parameters.get("hx"),
+        ranges=problem_parameters.get("ranges"),
         population_size=2,
         hcmr=0.95,
         par=0.10,

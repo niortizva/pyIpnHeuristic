@@ -4,13 +4,13 @@ from pyIpnHeuristic.benchmark import get_pg06
 
 def test_differential_evolution():
 
-    objective_function, g, h, ranges = get_pg06()
+    problem_parameters = get_pg06()
             
     differential_evolution = DifferentialEvolution(
-        objective_function,
-        soft_constrains=g,
-        hard_constrains=h,
-        ranges=ranges,
+        problem_parameters.get("objective_function"),
+        soft_constrains=problem_parameters.get("gx"),
+        hard_constrains=problem_parameters.get("hx"),
+        ranges=problem_parameters.get("ranges"),
         population_size=4,
         f=0.50,
         cr=0.10,

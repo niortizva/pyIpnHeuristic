@@ -1,23 +1,21 @@
 from pyIpnHeuristic import PopulationBasedHeuristics
-from pyIpnHeuristic.benchmark import get_pg06
+from pyIpnHeuristic.benchmark import get_pg01
 
 
 def test_population_based_heuristics():
 
-    objective_function, g, h, ranges = get_pg06()
+    problem_parameters = get_pg01()
     
     # Test Algorithm Class
     class Algorithm(PopulationBasedHeuristics):
         def __init__(self, *arg, **args):
             super().__init__(*arg, **args)
             
-    ranges = [[13, 100], [0, 100]]
-            
     algorithm = Algorithm(
-        objective_function,
-        soft_constrains=g,
-        hard_constrains=h,
-        ranges=ranges,
+        problem_parameters.get("objective_function"),
+        soft_constrains=problem_parameters.get("gx"),
+        hard_constrains=problem_parameters.get("hx"),
+        ranges=problem_parameters.get("ranges"),
         population_size=2
     )
     
