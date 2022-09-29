@@ -23,25 +23,30 @@
 """
 from setuptools import find_packages, setup
 
+
+def readme():
+    with open('README.md') as f:
+        return f.read()
+
+
 setup(
     name='pyIpnHeuristic',
     packages=find_packages(exclude=['tests']),
     version='0.2.2',
     description='pyIpnHeuristic is a pure Python implementation of some heuristic algorithms',
-    long_description="""pyIpnHeuristic is a pure Python implementation of some heuristic algorithms for the National
-    Polytechnic Institute of Mexico. For more information on pyIpnHeuristic, visit the `GitHub project page 
-    <https://github.com/niortizva/pyIpnHeuristic>`_.""",
+    long_description=readme(),
+    long_description_content_type='text/markdown',
     author='Nicolas Ortiz',
     author_email='nortizv2100@alumno.ipn.com',
     maintainer='Nicolas Ortiz',
     maintainer_email='nortizv2100@alumno.ipn.com',
     url='https://github.com/niortizva/pyIpnHeuristic',
-    license='BSD 3-Clause License',
+    license='MIT',
     classifiers=[
         'Development Status :: Development',
         'Intended Audience :: Education',
         'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
