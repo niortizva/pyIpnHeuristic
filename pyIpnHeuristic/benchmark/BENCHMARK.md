@@ -89,6 +89,28 @@ $$g_7(\mathbf{x}) = 0.5(x_2-8)^2 + 2(x_2 -4)^2 - 3x_5^{2} -x_6 - 30 \leq 0$$
 $$g_8(\mathbf{x}) = -3x_1 + 6x_2 + 12(x_9 - 8)^{2} - 7x_{10} \leq 0$$
 where: $-10 \leq x_i \leq 10$ $(i=1,\ldots,10)$
 
+## Problem G08
+
+Minimize:
+$$f(\mathbf{x}) = - \frac{ \sin^{3}(2\pi x_1) \sin (2\pi x_2) }{ x_1^{3} (x_1 + x_2) }$$
+subject to:
+$$g_1 (\mathbf{x}) = x_1^{2} - x_2 + 1 \leq 0$$
+$$g_2 (\mathbf{x}) = 1 - x_1 + (x_2 - 4)^{2} \leq 0$$
+where: $0 \leq x_1 \leq 10$ and $0 \leq x_2 \leq 10$
+
+## Problem G09
+
+Minimize:
+$$f(\mathbf{x}) = (x_1 - 10)^2 + 5 (x_2 -12)^2 + x_3^{4} + 3(x_4 - 11)^2
++ 10 x_5^{6} + 7x_6^{2} + x_7^{4} - 4x_6 x_7 - 10x_6 - 8x_7
+$$
+subject to:
+$$g_1 (\mathbf{x}) = -127 + 2x_1^{2} 3x_2^{4} + x_3 + 4x_4^{2} + 5x_5 \leq 0$$
+$$g_2 (\mathbf{x}) = -282 + 7x_1 + 3x_2 + 10x_3^{2} + x_4 - x_5 \leq 0$$
+$$g_3 (\mathbf{x}) = -196 + 23x_1 + x_2^{2} + 6x_6^{2} - 8x_7 \leq 0$$
+$$g_4 (\mathbf{x}) = 4x_1^{2} + x_2^{2} - 3x_1 x_2 + 2x_3^{2} + 5x_6 - 11x_7 \leq 0$$
+where: $-10 \leq x_1 \leq 10$ ($i=1,\ldots,7$)
+
 ## Problem G11:
 
 Minimize: 

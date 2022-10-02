@@ -299,7 +299,31 @@ def get_pg08() -> dict:
     Problem G08
     :return dict: Returns problem parameters
     """
-    pass
+    def objective_function(*x):
+        return - (math.sin(2 * math.pi * x[0]))**3 * math.sin(2 * math.pi * x[1]) / \
+               (x[0]**3 * (x[0] + x[1]))
+
+    def g1(*x):
+        return x[0]**2 - x[1] + 1
+
+    def g2(*x):
+        return 1 - x[0] + (x[1] - 4)**2
+
+    ranges = [[0, 10], [0, 10]]
+
+    x_best = [1.22797135260752599, 4.24537336612274885]
+
+    fx_best = objective_function(*x_best)
+
+    return {
+        "objective_function": objective_function,
+        "gx": [g1, g2],
+        "hx": [],
+        "ranges": ranges,
+        "markdown": PROBLEM_G08,
+        "x": x_best,
+        "fx": fx_best
+    }
 
 
 def get_pg09() -> dict:
@@ -307,7 +331,38 @@ def get_pg09() -> dict:
     Problem G09
     :return dict: Returns problem parameters
     """
-    pass
+    def objective_function(*x):
+        return (x[0] - 10)**2 + 5 * (x[1] - 12)**2 + x[2]**4 + 3 * (x[3] - 11)**2 + \
+               10 * x[4]**6 + 7 * x[5]**2 + x[6]**4 - 4 * x[5] * x[6] - 10 * x[5] - 8 * x[6]
+
+    def g1(*x):
+        return - 127 + 2 * x[0]**2 + 3 * x[1]**4 + x[2] + 4 * x[3]**2 + 5 * x[4]
+
+    def g2(*x):
+        return - 282 + 7 * x[0] + 3 * x[1] + 10 * x[2]**2 + x[3] - x[4]
+
+    def g3(*x):
+        return - 196 + 23 * x[0] + x[1]**2 + 6 * x[5]**2 - 8 * x[6]
+
+    def g4(*x):
+        return 4 * x[0]**2 + x[1]**2 - 3 * x[0] * x[1] + 2 * x[2]**2 + 5 * x[5] - 11 * x[6]
+
+    ranges = [[-10, 10] for _ in range(7)]
+
+    x_best = [2.33049935147405174, 1.95137236847114592, -0.477541399510615805,
+              4.36572624923625874, -0.624486959100388983, 1.03813099410962173, 1.5942266780671519]
+
+    fx_best = objective_function(*x_best)
+
+    return {
+        "objective_function": objective_function,
+        "gx": [g1, g2, g3, g4],
+        "hx": [],
+        "ranges": ranges,
+        "markdown": PROBLEM_G09,
+        "x": x_best,
+        "fx": fx_best
+    }
 
 
 def get_pg10() -> dict:
