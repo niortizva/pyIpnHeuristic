@@ -1,6 +1,6 @@
 <div style="text-align: center;">
 
-# Benchmark [Liang et al. 2006](https://www.researchgate.net/publication/216301032_Problem_definitions_and_evaluation_criteria_for_the_CEC_2006_special_session_on_constrained_real-parameter_optimization)
+# Benchmark
 </div>
 
 ## Problem G01:
