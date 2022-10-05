@@ -111,6 +111,19 @@ $$g_3 (\mathbf{x}) = -196 + 23x_1 + x_2^{2} + 6x_6^{2} - 8x_7 \leq 0$$
 $$g_4 (\mathbf{x}) = 4x_1^{2} + x_2^{2} - 3x_1 x_2 + 2x_3^{2} + 5x_6 - 11x_7 \leq 0$$
 where: $-10 \leq x_1 \leq 10$ ($i=1,\ldots,7$)
 
+## Problem G10
+
+Minimize:
+$$f(\mathbf{x}) = x_1 + x_2 + x_3$$
+subject to:
+$$g_1 (\mathbf{x}) = -1 + 0.0025 (x_4 + x_6) \leq 0$$
+$$g_2 (\mathbf{x}) = -1 + 0.0025 (x_5 + x_7 - x_4) \leq 0$$
+$$g_3 (\mathbf{x}) = -1 + 0.01 (x_8 - x_5) \leq 0$$
+$$g_4 (\mathbf{x}) = -x_1 x_6 + 833.33252x_4 + 100x_1 - 83333.333 \leq 0$$
+$$g_5 (\mathbf{x}) = -x_1 x_7 + 1250 x_5 + x_2 x_4 - 1250 x_4 \leq 0$$
+$$g_6 (\mathbf{x}) = -x_3 x_8 + 1250000 + x_3 x_5 - 2500 x_5 \leq 0$$
+where: $100 \leq x_1 \leq 10000$, $1000 \leq x_i \leq 10000$ ($i=2,3$) and $10 \leq x_i \leq 1000$ ($i=4,\ldots,8$)
+
 ## Problem G11:
 
 Minimize: 
@@ -118,3 +131,88 @@ $$f(\mathbf{x}) = x_1^{2} + (x_{2} - 1)^{2}$$
 subject to:
 $$h_1(\mathbf{x}) = x_2 -x_{1}^{2} \leq 0 $$
 where: $-1 \leq x_1 \leq 1$, $-1 \leq x_2 \leq 1$
+
+## Problem G12
+
+Minimize: 
+$$f(\mathbf{x}) = -(100 - (x_1 - 5)^{2} - (x_2 - 5)^{2} - (x_3 - 5)^{2}) / 100$$
+subject to:
+$$g_1(\mathbf{x}) = (x_1 - p)^{2} + (x_2 - q)^{2} + (x_3 - r)^{2} - 0.0625 \leq 0 $$
+where: $0 \leq x_i \leq 10$ ($i=1,2,3$) and $p,q,r = 1,2,\ldots,9$
+
+## Problem G13
+
+Minimize:
+$$f(\mathbf{x}) = e^{x_1 x_2 x_3 x_4 x_5}$$
+subject to:
+$$h_1 (\mathbf{x}) = x_1^{2} + x_2^{2} + x_3^{2} + x_4^{2} + x_5^{2} - 10 = 0$$
+$$h_2 (\mathbf{x}) = x_2 x_3 - 5 x_4 x_5 = 0$$
+$$h_3 (\mathbf{x}) = x_1^{3} + x_2^{3} + 1 = 0$$
+where: $-2.3 \leq x_i \leq 2.3$ ($i=1,2$) and $-3.2 \leq x_i \leq 3.2$ ($i=3,4,5$)
+
+## Problem G14
+
+Minimize:
+$$f(\mathbf{x}) = \sum_{i=1}^{10} x_i \left( c_i + \ln \frac{x_i}{\sum_{j=1}^{10} x_j} \right)$$
+subject to:
+$$h_1(\mathbf{x}) = x_1 + 2 x_2 + 2 x_3 + x_6 + x_{10} - 2 = 0 $$
+$$h_2(\mathbf{x}) = x_4 + 2 x_5 + x_6 + x_7 - 1 = 0 $$
+$$h_3(\mathbf{x}) = x_3 + x_7 + x_8 + 2 x_9 + x_{10} - 1 = 0 $$
+where: $0 < x_i \leq 10$ ($i=1,\ldots,10$) and $c_1 = -6.089$, $c_2 = -17.164$, $c_3 = -34.054$,
+$c_4 = -5.914$, $c_5 = -24.721$, $c_6 = -14.986$, $c_7 = -24.1$, $c_8 = -10.708$, $c_9 = -26.662$ and
+$c_{10} = -22.179$
+
+## Problem G15
+
+Minimize:
+$$f(\mathbf{x}) = 1000 - x_1^{2} - 2x_2^{2} - x_3^{2} - x_1 x_2 - x_1 x_3$$
+subject to:
+$$h_1(\mathbf{x}) = x_1^{2} + x_2^{2} + x_3^{2} - 25 = 0 $$
+$$h_2(\mathbf{x}) = 8x_1 + 14x_2 + 7x_3 - 56 = 0 $$
+where: $0 \leq x_i \leq 10$ ($i=1,2,3$)
+
+## Problem G17
+
+Minimize:
+$$f(\mathbf{x}) = f_1(x_1) + f_2(x_2)$$
+where:
+$$ f_1(x_1) = \left\lbrace \begin{array}{l l}
+30 x_1 & 0\leq x_1 < 300 \\
+31x_1 & 300 \leq x_1 < 400 \end{array} \right. $$
+
+$$ f_2(x_2) = \left\lbrace \begin{array}{l l}
+28 x_2 & 0\leq x_2 < 100 \\
+29 x_2 & 100\leq x_2 < 200 \\
+30 x_2 & 200\leq x_2 < 1000 \end{array} \right. $$
+subject to:
+$$h_1(\mathbf{x}) = - x_1 + 300 - \frac{x_3 x_4}{131.078} \cos (1.48477 - x_6) + 
+\frac{0.90798 x_3^{2}}{131.078} \cos (1.47588) = 0 $$
+$$h_2(\mathbf{x}) = - x_2 - \frac{x_3 x_4}{131.078} \cos (1.48477 + x_6) + 
+\frac{0.90798 x_4^{2}}{131.078} \cos (1.47588) = 0 $$
+$$h_3(\mathbf{x}) = - x_5 - \frac{x_3 x_4}{131.078} \sin (1.48477 + x_6) + 
+\frac{0.90798 x_4^{2}}{131.078} \sin (1.47588) = 0 $$
+$$h_4(\mathbf{x}) = 200 - \frac{x_3 x_4}{131.078} \sin (1.48477 - x_6) + 
+\frac{0.90798 x_3^{2}}{131.078} \sin (1.47588) = 0 $$
+
+where: $0 \leq x_1 \leq 300$, $0 \leq x_2 \leq 1000$, $340 \leq x_3 \leq 420$,
+$340 \leq x_4 \leq 420$, $-1000 \leq x_5 \leq 1000$ and $0 \leq x_6 \leq 0.5236$
+
+## Problem G18
+
+Minimize:
+$$f(\mathbf{x}) = -0.5 (x_1 x_4 - x_2 x_3 + x_3 x_9 - x_5 x_9 + x_5 x_8 - x_6 x_7)$$
+subject to:
+$$g_1(\mathbf{x}) = x_3^{2} + x_4^{2} - 1 \leq 0$$
+$$g_2(\mathbf{x}) = x_9^{2} - 1 \leq 0$$
+$$g_3(\mathbf{x}) = x_5^{2} + x_6^{2} - 1 \leq 0$$
+$$g_4(\mathbf{x}) = x_1^{2} + (x_2 - x_9)^{2} - 1 \leq 0$$
+$$g_5(\mathbf{x}) = (x_1 - x_5)^{2} + (x_2 - x_6)^{2} - 1 \leq 0$$
+$$g_6(\mathbf{x}) = (x_1 - x_7)^{2} + (x_2 - x_8)^{2} - 1 \leq 0$$
+$$g_7(\mathbf{x}) = (x_3 - x_5)^{2} + (x_4 - x_6)^{2} - 1 \leq 0$$
+$$g_8(\mathbf{x}) = (x_3 - x_7)^{2} + (x_4 - x_8)^{2} - 1 \leq 0$$
+$$g_9(\mathbf{x}) = x_7^{2} + (x_8 - x_9)^{2} - 1 \leq 0$$
+$$g_10(\mathbf{x}) = x_2 x_3 - x_1 x_4 \leq 0$$
+$$g_11(\mathbf{x}) = - x_3 x_9 \leq 0$$
+$$g_12(\mathbf{x}) = x_5 x_9 \leq 0$$
+$$g_13(\mathbf{x}) = x_6 x_7 - x_5 x_8 \leq 0$$
+where: $-10 \leq x_i \leq 10$ ($i=1,\ldots,8$) and $0 \leq x_9 \leq 20$

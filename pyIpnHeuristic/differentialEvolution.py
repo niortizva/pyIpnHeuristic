@@ -13,8 +13,9 @@ class DifferentialEvolution(PopulationBasedHeuristics):
         super().__init__(*args, **params)
         # Differential Evolution parameters
         self.f = params.get("f", 0.5)
-        self.cr = params.get("cr", 0.1)
-
+        self.cr = params.get("cr", 0.8)
+        # Types: rand-1, best-1, current-to-best-1, best-2, rand-2
+        self.type = params.get("type", "rand-1")
         self.index_list = [i for i in range(self.population_size)]
         
         # Check if population has enough size
@@ -35,17 +36,88 @@ class DifferentialEvolution(PopulationBasedHeuristics):
         :return list: Mutation Matrix
         """
         mutation_matrix: List[dict] = []
-        for i in range(self.population_size):
-            # Get Different Random Indexes
-            r1 = random.choice(list(set(self.index_list) - {i}))
-            r2 = random.choice(list(set(self.index_list) - {i, r1}))
-            r3 = random.choice(list(set(self.index_list) - {i, r1, r2}))
-            # Get associated vectors
-            x1 = self.population[r1]["x"]
-            x2 = self.population[r2]["x"]
-            x3 = self.population[r3]["x"]
-            mutation_matrix.append(self.fix_ranges({"x": [x1[j] + self.f * (x2[j] - x3[j])
-                                                          for j in range(self.dimension)]}))
+        if self.type == "rand-1":
+            for i in range(self.population_size):
+                # Get Different Random Indexes
+                r1 = random.choice(list(set(self.index_list) - {i}))
+                r2 = random.choice(list(set(self.index_list) - {i, r1}))
+                r3 = random.choice(list(set(self.index_list) - {i, r1, r2}))
+                # Get associated vectors
+                x1 = self.population[r1]["x"]
+                x2 = self.population[r2]["x"]
+                x3 = self.population[r3]["x"]
+                mutation_matrix.append(self.fix_ranges({"x": [x1[j] + self.f * (x2[j] - x3[j])
+                                                              for j in range(self.dimension)]}))
+        elif self.type == "best-1":
+            for i in range(self.population_size):
+                # Get best vector
+                fx_matrix = [vector["fx"] for vector in self.population]
+                x_best = self.population[fx_matrix.index(min(fx_matrix))]["x"]
+                # Get Different Random Indexes
+                r1 = random.choice(list(set(self.index_list) - {i}))
+                r2 = random.choice(list(set(self.index_list) - {i, r1}))
+                # Get associated vectors
+                x1 = self.population[r1]["x"]
+                x2 = self.population[r2]["x"]
+                mutation_matrix.append(self.fix_ranges({"x": [x_best[j] + self.f * (x1[j] - x2[j])
+                                                              for j in range(self.dimension)]}))
+        elif self.type == "current-to-best-1":
+            for i in range(self.population_size):
+                # Get best vector
+                fx_matrix = [vector["fx"] for vector in self.population]
+                x_best = self.population[fx_matrix.index(min(fx_matrix))]["x"]
+                x_current = self.population[i]["x"]
+                # Get Different Random Indexes
+                r1 = random.choice(list(set(self.index_list) - {i}))
+                r2 = random.choice(list(set(self.index_list) - {i, r1}))
+                # Get associated vectors
+                x1 = self.population[r1]["x"]
+                x2 = self.population[r2]["x"]
+                mutation_matrix.append(self.fix_ranges({"x": [
+                    x_current[j] + self.f * (x_best[j] - x_current[j]) + self.f * (x1[j] - x2[j])
+                    for j in range(self.dimension)
+                ]}))
+        elif self.type == "best-2":
+            for i in range(self.population_size):
+                # Get best vector
+                fx_matrix = [vector["fx"] for vector in self.population]
+                x_best = self.population[fx_matrix.index(min(fx_matrix))]["x"]
+                # Get Different Random Indexes
+                r1 = random.choice(list(set(self.index_list) - {i}))
+                r2 = random.choice(list(set(self.index_list) - {i, r1}))
+                r3 = random.choice(list(set(self.index_list) - {i, r1, r2}))
+                r4 = random.choice(list(set(self.index_list) - {i, r1, r2, r3}))
+                # Get associated vectors
+                x1 = self.population[r1]["x"]
+                x2 = self.population[r2]["x"]
+                x3 = self.population[r3]["x"]
+                x4 = self.population[r4]["x"]
+                mutation_matrix.append(self.fix_ranges({"x": [
+                    x_best[j] + self.f * (x1[j] - x2[j]) + self.f * (x3[j] - x4[j])
+                    for j in range(self.dimension)
+                ]}))
+        elif self.type == "rand-2":
+            for i in range(self.population_size):
+                # Get best vector
+                fx_matrix = [vector["fx"] for vector in self.population]
+                # Get Different Random Indexes
+                r0 = random.choice(list(set(self.index_list) - {i}))
+                r1 = random.choice(list(set(self.index_list) - {i, r0}))
+                r2 = random.choice(list(set(self.index_list) - {i, r0, r1}))
+                r3 = random.choice(list(set(self.index_list) - {i, r0, r1, r2}))
+                r4 = random.choice(list(set(self.index_list) - {i, r0, r1, r2, r3}))
+                # Get associated vectors
+                x0 = self.population[r0]["x"]
+                x1 = self.population[r1]["x"]
+                x2 = self.population[r2]["x"]
+                x3 = self.population[r3]["x"]
+                x4 = self.population[r4]["x"]
+                mutation_matrix.append(self.fix_ranges({"x": [
+                    x0[j] + self.f * (x1[j] - x2[j]) + self.f * (x3[j] - x4[j])
+                    for j in range(self.dimension)
+                ]}))
+        else:
+            raise TypeError("¡Differential Evolution variant type is not defined!")
         
         return mutation_matrix
     
@@ -65,13 +137,11 @@ class DifferentialEvolution(PopulationBasedHeuristics):
         """
         recombination_matrix: List[dict] = []
         for i in range(self.population_size):
-            rnd = random.random()
-            rnd_index = random.choice(list(set(self.index_list)))
             xr = self.population[i]["x"]
             vr = mutation_matrix[i]["x"]
-            recombination_matrix.append(
-                {"x": [vr[j] if rnd <= self.cr or j == rnd_index else xr[j]
-                       for j in range(self.dimension)]})
+            recombination_matrix.append({"x": [
+                vr[j] if random.random() <= self.cr or j == random.choice(self.index_list)
+                else xr[j] for j in range(self.dimension)]})
         
         return self.evaluate_population(recombination_matrix)
     
