@@ -216,3 +216,49 @@ $$g_11(\mathbf{x}) = - x_3 x_9 \leq 0$$
 $$g_12(\mathbf{x}) = x_5 x_9 \leq 0$$
 $$g_13(\mathbf{x}) = x_6 x_7 - x_5 x_8 \leq 0$$
 where: $-10 \leq x_i \leq 10$ ($i=1,\ldots,8$) and $0 \leq x_9 \leq 20$
+
+## Problem G19
+
+Minimize:
+$$f(\mathbf{x}) = \sum_{j=1}^{5} \sum_{i=1}^{5} c_{i,j} x_{10+i} x_{10+j} +
+2 \sum_{j=1}^{5} d_j x_{10+j}^{3} - \sum_{i=1}^{10} b_i x_i$$
+subject to:
+$$g_j(\mathbf{x}) = - 2 \sum_{i=1}^{5} c_{i,j} x_{10+i} - 3 d_j x_{10+j}^{2} -  
+e_{j} + \sum_{i=1}^{10} a_{i,j} x_i \leq 0$$
+where: $0 \leq x_i \leq 10$ ($i=1,\ldots,15$)
+
+## Problem G20
+
+Minimize:
+$$f(\mathbf{x}) = \sum_{i=1}^{24} a_i x_i$$
+subject to:
+$$g_i(\mathbf{x}) = \frac{x_i + x_{i+12}}{\sum_{j=1}^{24} x_j + e_i} \leq 0 \ \ \ j=1,2,3$$
+$$g_i(\mathbf{x}) = \frac{x_{i+3} + x_{i+15}}{\sum_{j=1}^{24} x_j + e_i} \leq 0 \ \ \ j=4,5,6$$
+$$h_i(\mathbf{x}) = \frac{x_{i+12}}{b_{i+12}\sum_{j=13}^{24}\frac{x_j}{b_j}} -
+\frac{c_i x_i}{40 b_i \sum_{j=1}^{12} \frac{x_j}{b_j}} = 0 \ \ \ j=1,\ldots,12$$
+$$h_{13}(\mathbf{x}) = \sum_{i=1}^{24} x_i - 1 = 0$$
+$$h_{14}(\mathbf{x}) = \sum_{i=1}^{12} \frac{x_i}{d_i} + k \sum_{i=13}^{24} \frac{x_i}{b_i} - 1.671 = 0$$
+where: $0 \leq x_i \leq 10$ ($i=1,\ldots,24$)
+
+## Problem G21
+
+Minimize:
+$$f(\mathbf{x}) = x_1$$
+subject to:
+$$g_1(\mathbf{x}) = - x_1 + 35 x_2^{0.6} + 35 x_3^{0.6} \leq 0 $$
+$$h_1(\mathbf{x}) = - 300 x_3 + 7500 x_5 - 7500 x_6 - 25 x_4 x_5 + 25 x_4 x_6 + x_3 x_4 = 0$$
+$$h_2(\mathbf{x}) = 100 x_2 + 155.365 x_4 + 2500 x_7 - x_2 x_4 - 25 x_4 x_7 - 15536.5 = 0$$
+$$h_3(\mathbf{x}) = - x_5 + \ln (- x_4 + 900) = 0$$
+$$h_4(\mathbf{x}) = - x_6 + \ln (x_4 + 300) = 0$$
+$$h_5(\mathbf{x}) = - x_7 + \ln (- 2 x_4 + 700) = 0$$
+where: $0 \leq x_1 \leq 1000$, $0 \leq x_2, x_3 \leq 40$, $100 \leq x_4 \leq 300$, 
+$6.3 \leq x_5 \leq 6.7$, $5.9 \leq x_6 \leq 6.4$ and $4.5 \leq x_7 \leq 6.25$
+
+## Problem G24
+
+Minimize:
+$$f(\mathbf{x}) = - x_1 - x_2$$
+subject to:
+$$g_1(\mathbf{x}) = - 2 x_1^{4} + 8 x_1^{3} - 8 x_1^{2} + x_2 - 2 \leq 0 $$
+$$g_2(\mathbf{x}) = - 4 x_1^{4} + 32 x_1^{3} - 88 x_1^{2} + 96 x_1 + x_2 - 36 \leq 0 $$
+where: $0 \leq x_1 \leq 3$ and $0 \leq x_2 \leq 4$

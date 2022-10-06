@@ -14,19 +14,40 @@ def test_benchmark():
                  7049.24802052867, 0.7499, -1.0000000000000, 0.053941514041898,
                  -47.7648884594915, 961.715022289961, -1.90515525853479,
                  8853.534016, -0.866025403784439, 32.6555929502463,
-                 0.0000000000000, 193.724510070035, 236.430975504001,
+                 0.204979, 193.724510070035, 236.430975504001,
                  -400.055099999999584, -5.50801327159536]
 
-    implemented = [1, 2, 3, 4, 5, 6, 7, 8, 9,
-                   10, 11, 12, 13, 14, 15, 17, 18]
+    implemented = [1, 2, 3, 4,
+                   5, 6, 7, 8,
+                   9, 10, 11, 12,
+                   13, 14, 15,
+                   17, 18, 19, 20,
+                   21, 24]
 
     for i in range(24):
         if i + 1 in implemented:
             problem_parameters = problems[i]()
-            fx_best = problem_parameters.get("fx")
+            fx_best = problem_parameters["fx"]
             if format(fx_best, '.6f') != format(solutions[i], '.6f'):
                 raise ValueError("Problem G{i}: FAILED, {fx_calc} != {fx_real}".format(
                     i=i+1, fx_calc=format(fx_best, '.6f'), fx_real=format(solutions[i], '.6f')))
-            print(problem_parameters.get("markdown"))
+
+            # Test Soft Restrictions
+            for j in range(len(problem_parameters["gx"])):
+                gj = problem_parameters["gx"][j]
+                try:
+                    gj(*problem_parameters["x"])
+                except Exception as exc:
+                    print("Problem {i} Soft restriction {j}: FAILED".format(i=i+1, j=j+1))
+                    raise Exception("{}".format(exc))
+
+            # Test Hard Restriction
+            for j in range(len(problem_parameters["hx"])):
+                hj = problem_parameters["hx"][j]
+                try:
+                    hj(*problem_parameters["x"])
+                except Exception as exc:
+                    print("Problem {i} Hard restriction {j}: FAILED".format(i=i + 1, j=j + 1))
+                    raise Exception("{}".format(exc))
 
     return

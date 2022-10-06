@@ -510,11 +510,8 @@ def get_pg14() -> dict:
     Problem G14
     :return dict: Returns problem parameters
     """
-    constants = [-6.089, -17.164, -34.054, -5.914, -24.721,
-                 -14.986, -24.1, -10.708, -26.662, -22.179]
-
-    def objective_function(*x, c: list = constants):
-        return sum([x[i] * (c[i] + math.log(x[i] / sum(x))) for i in range(len(x))])
+    def objective_function(*x):
+        return sum([x[i] * (PROBLEM_G14_PARAMETERS[i] + math.log(x[i] / sum(x))) for i in range(len(x))])
 
     def h1(*x):
         return x[0] + 2 * x[1] + 2 * x[2] + x[5] + x[9] - 2
@@ -661,7 +658,7 @@ def get_pg18() -> dict:
         return (x[2] - x[6])**2 + (x[3] - x[7])**2 - 1
 
     def g9(*x):
-        return x[6]**2 + (x[7] - x[9])**2 - 1
+        return x[6]**2 + (x[7] - x[8])**2 - 1
 
     def g10(*x):
         return x[1] * x[2] - x[0] * x[3]
@@ -699,7 +696,40 @@ def get_pg19() -> dict:
     Problem G19
     :return dict: Returns problem parameters
     """
-    pass
+    def objective_function(*x):
+        return sum([PROBLEM_G19_PARAMETERS["c"][i][j] * x[10+i] * x[10+j]
+                    for i in range(5) for j in range(5)]) +\
+               2 * sum([PROBLEM_G19_PARAMETERS["d"][j] * x[10+j]**3 for j in range(5)]) -\
+               sum([PROBLEM_G19_PARAMETERS["b"][i] * x[i] for i in range(10)])
+
+    def g(j):
+        def gj(*x):
+            return - 2 * sum([PROBLEM_G19_PARAMETERS["c"][i][j] * x[10+i] for i in range(5)])\
+                   - 3 * PROBLEM_G19_PARAMETERS["d"][j] * x[10+j]**2\
+                   - PROBLEM_G19_PARAMETERS["e"][j]\
+                   + sum([PROBLEM_G19_PARAMETERS["a"][i][j] * x[i] for i in range(10)])
+        return gj
+
+    ranges = [*[[0, 10] for _ in range(15)]]
+
+    x_best = [1.66991341326291344 * 10**-17, 3.95378229282456509 * 10**-16,
+              3.94599045143233784, 1.06036597479721211 * 10**-16, 3.2831773458454161,
+              9.99999999999999822, 1.12829414671605333 * 10**- 17,
+              1.2026194599794709 * 10**-17, 2.50706276000769697 * 10**-15,
+              2.24624122987970677 * 10**-15, 0.370764847417013987, 0.278456024942955571,
+              0.523838487672241171, 0.388620152510322781, 0.298156764974678579]
+
+    fx_best = objective_function(*x_best)
+
+    return {
+        "objective_function": objective_function,
+        "gx": [g(j) for j in range(5)],
+        "hx": [],
+        "ranges": ranges,
+        "markdown": PROBLEM_G19,
+        "x": x_best,
+        "fx": fx_best
+    }
 
 
 def get_pg20() -> dict:
@@ -707,7 +737,59 @@ def get_pg20() -> dict:
     Problem G20
     :return dict: Returns problem parameters
     """
-    pass
+    def objective_function(*x):
+        return sum([PROBLEM_G20_PARAMETERS["a"][i] * x[i] for i in range(24)])
+
+    def gi1(i):
+        def gi(*x):
+            return (x[i] + x[i+12]) / (sum(x) + PROBLEM_G20_PARAMETERS["e"][i])
+        return gi
+
+    def gi2(i):
+        def gi(*x):
+            return (x[i+3] + x[i+15]) / (sum(x) + PROBLEM_G20_PARAMETERS["e"][i])
+        return gi
+
+    def h(i):
+        def hi(*x):
+            return x[i+12] / (
+                    PROBLEM_G20_PARAMETERS["b"][i+12] *
+                    sum([x[j]/PROBLEM_G20_PARAMETERS["b"][j] for j in range(12, 24)])
+            ) - (PROBLEM_G20_PARAMETERS["c"][i] * x[i]) / (
+                    40 * PROBLEM_G20_PARAMETERS["b"][i] *
+                    sum([x[j] / PROBLEM_G20_PARAMETERS["b"][j] for j in range(12)]))
+        return hi
+
+    def h13(*x):
+        return sum(x) - 1
+
+    def h14(*x):
+        return sum([x[i] / PROBLEM_G20_PARAMETERS["d"][i] for i in range(12)]) +\
+               PROBLEM_G20_PARAMETERS["k"] * sum([x[i] / PROBLEM_G20_PARAMETERS["b"][i]
+                                                  for i in range(12, 24)]) - 1.671
+
+    ranges = [*[[0, 10] for _ in range(24)]]
+
+    x_best = [1.28582343498528086 * 10**-18, 4.83460302526130664 * 10**-34, 0, 0,
+              6.30459929660781851 * 10**-18, 7.57192526201145068 * 10**-34,
+              5.03350698372840437 * 10**-34, 9.28268079616618064 * 10**-34, 0,
+              1.76723384525547359 * 10**-17, 3.55686101822965701 * 10**-34,
+              2.99413850083471346 * 10**-34, 0.158143376337580827, 2.29601774161699833 * 10**-19,
+              1.06106938611042947 * 10**-18, 1.31968344319506391 * 10**-18, 0.530902525044209539,
+              0, 2.89148310257773535 * 10**-18, 3.34892126180666159 * 10**-18, 0,
+              0.310999974151577319, 5.41244666317833561 * 10**-5, 4.84993165246959553 * 10**-16]
+
+    fx_best = objective_function(*x_best)
+
+    return {
+        "objective_function": objective_function,
+        "gx": [*[gi1(i) for i in range(3)], *[gi2(i) for i in range(3, 6)]],
+        "hx": [*[h(i) for i in range(12)], h13, h14],
+        "ranges": ranges,
+        "markdown": PROBLEM_G20,
+        "x": x_best,
+        "fx": fx_best
+    }
 
 
 def get_pg21() -> dict:
@@ -715,7 +797,46 @@ def get_pg21() -> dict:
     Problem G21
     :return dict: Returns problem parameters
     """
-    pass
+    def objective_function(*x):
+        return x[0]
+
+    def g1(*x):
+        return - x[0] + 35 * x[1]**0.6 + 35 * x[2]**0.6
+
+    def h1(*x):
+        return - 300 * x[2] + 7500 * x[4] - 7500 * x[5] - 25 * x[3] * x[4] +\
+               25 * x[3] * x[5] + x[2] * x[3]
+
+    def h2(*x):
+        return 100 * x[1] + 155.365 * x[3] + 2500 * x[6] - x[1] * x[3] -\
+               25 * x[3] * x[6] - 15536.5
+
+    def h3(*x):
+        return - x[4] + math.log(- x[3] + 900)
+
+    def h4(*x):
+        return - x[5] + math.log(x[3] + 300)
+
+    def h5(*x):
+        return - x[6] + math.log(- 2 * x[3] + 700)
+
+    ranges = [[0, 1000], [0, 40], [0, 40], [100, 300], [6.3, 6.7], [5.9, 6.4], [4.5, 6.25]]
+
+    x_best = [193.724510070034967, 5.56944131553368433 * 10**-27,
+              17.3191887294084914, 100.047897801386839, 6.68445185362377892,
+              5.99168428444264833, 6.21451648886070451]
+
+    fx_best = objective_function(*x_best)
+
+    return {
+        "objective_function": objective_function,
+        "gx": [g1],
+        "hx": [h1, h2, h3, h4, h5],
+        "ranges": ranges,
+        "markdown": PROBLEM_G21,
+        "x": x_best,
+        "fx": fx_best
+    }
 
 
 def get_pg22() -> dict:
@@ -739,4 +860,27 @@ def get_pg24() -> dict:
     Problem G24
     :return dict: Returns problem parameters
     """
-    pass
+    def objective_function(*x):
+        return - x[0] - x[1]
+
+    def g1(*x):
+        return - 2 * x[0]**4 + 8 * x[0]**3 - 8 * x[0]**2 + x[1] - 2
+
+    def g2(*x):
+        return - 4 * x[0]**4 + 32 * x[0]**3 - 88 * x[0]**2 + 96 * x[0] + x[1] - 36
+
+    ranges = [[0, 3], [0, 4]]
+
+    x_best = [2.32952019747762, 3.17849307411774]
+
+    fx_best = objective_function(*x_best)
+
+    return {
+        "objective_function": objective_function,
+        "gx": [g1, g2],
+        "hx": [],
+        "ranges": ranges,
+        "markdown": PROBLEM_G24,
+        "x": x_best,
+        "fx": fx_best
+    }

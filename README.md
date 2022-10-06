@@ -4,6 +4,12 @@ pyIpnHeuristic is a pure Python implementation of some heuristic algorithms for 
 Polytechnic Institute of Mexico. For more information on pyIpnHeuristic, visit the GitHub project page
 [pyIpnHeuristic](https://github.com/niortizva/pyIpnHeuristic)
 
+## Install
+
+```sh
+pip install pyIpnHeuristic
+```
+
 ## Benchmark 
 
 Benchmark problems were taken from [Liang et al. 2006](https://www.researchgate.net/publication/216301032_Problem_definitions_and_evaluation_criteria_for_the_CEC_2006_special_session_on_constrained_real-parameter_optimization).
