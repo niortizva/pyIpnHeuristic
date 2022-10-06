@@ -18,6 +18,8 @@ def test_harmony_search():
         alpha=10**-2
     )
 
-    harmony_search.search(iterations=100000, save_history=True)
+    harmony_search.search(iterations=100000, save_history=False)
+
+    print(harmony_search.population[-1])
     
     return harmony_search.population

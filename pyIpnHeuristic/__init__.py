@@ -163,7 +163,7 @@ class PopulationBasedHeuristics(object):
                                for gi in self.soft_constrains])
         if self.smooth:
             individual["hx"] = sum([(abs(hi(*individual["x"])) - self.epsilon) * 
-                                    (abs(hi(*individual["x"])) < self.epsilon)
+                                    (abs(hi(*individual["x"])) > self.epsilon)
                                     for hi in self.hard_constrains])
         else:
             individual["hx"] = sum([abs(hi(*individual["x"])) * (hi(*individual["x"]) != 0) 
