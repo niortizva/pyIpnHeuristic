@@ -1,7 +1,6 @@
 from typing import List
-
 from . import PopulationBasedHeuristics
-import random
+from random import random, choice
 
 
 class DifferentialEvolution(PopulationBasedHeuristics):
@@ -29,19 +28,25 @@ class DifferentialEvolution(PopulationBasedHeuristics):
         """
         Mutation Heuristic
 
-        - For each x_i in population
-            - Select x_r1, x_r2, x_r3 such as r1 != r2 != r3 != i
-            - m_i = x_r1 + F * (x_r2 - x_r3)
-            - add m_i to Mutation Matrix
+        - For each :math:`x_{i}` in population
+            - Select :math:`x_{r_1}`, :math:`x_{r_2}`, :math:`x_{r_3}`,
+              :math:`x_{r_4}` and :math:`x_{r_5}` such as
+              :math:`r_1 \neq r_2 \neq r_3 \neq r_4 \neq r_5 \neq i`
+            - i) Rand/1/bin :math:`m_i = x_{r_1} + F (x_{r_2} - x_{r_3})`
+              ii) Best/1 :math:`m_i = x_{\text{best}} + F (x_{r_1} - x_{r_2})`
+              iii) Current-to-best/1 :math:`m_i = x_{i} + F (x_{\text{best}} - x_{i}) + F(x_{r_1} - x_{r_2})`
+              iv) Best/2 :math:`m_i = x_{\text{best}} + F (x_{r_1} - x_{r_2}) + F(x_{r_3} - x_{r_4})`
+              v) Rand/2 :math:`m_i = x_{r_1} + F (x_{r_2} - x_{r_3}) + F(x_{r_4} - x_{r_5})`
+            - add :math:`m_i` to Mutation Matrix
         :return list: Mutation Matrix
         """
         mutation_matrix: List[dict] = []
         if self.type == "rand-1":
             for i in range(self.population_size):
                 # Get Different Random Indexes
-                r1 = random.choice(list(set(self.index_list) - {i}))
-                r2 = random.choice(list(set(self.index_list) - {i, r1}))
-                r3 = random.choice(list(set(self.index_list) - {i, r1, r2}))
+                r1 = choice(list(set(self.index_list) - {i}))
+                r2 = choice(list(set(self.index_list) - {i, r1}))
+                r3 = choice(list(set(self.index_list) - {i, r1, r2}))
                 # Get associated vectors
                 x1 = self.population[r1]["x"]
                 x2 = self.population[r2]["x"]
@@ -54,8 +59,8 @@ class DifferentialEvolution(PopulationBasedHeuristics):
                 fx_matrix = [vector["fx"] for vector in self.population]
                 x_best = self.population[fx_matrix.index(min(fx_matrix))]["x"]
                 # Get Different Random Indexes
-                r1 = random.choice(list(set(self.index_list) - {i}))
-                r2 = random.choice(list(set(self.index_list) - {i, r1}))
+                r1 = choice(list(set(self.index_list) - {i}))
+                r2 = choice(list(set(self.index_list) - {i, r1}))
                 # Get associated vectors
                 x1 = self.population[r1]["x"]
                 x2 = self.population[r2]["x"]
@@ -68,8 +73,8 @@ class DifferentialEvolution(PopulationBasedHeuristics):
                 x_best = self.population[fx_matrix.index(min(fx_matrix))]["x"]
                 x_current = self.population[i]["x"]
                 # Get Different Random Indexes
-                r1 = random.choice(list(set(self.index_list) - {i}))
-                r2 = random.choice(list(set(self.index_list) - {i, r1}))
+                r1 = choice(list(set(self.index_list) - {i}))
+                r2 = choice(list(set(self.index_list) - {i, r1}))
                 # Get associated vectors
                 x1 = self.population[r1]["x"]
                 x2 = self.population[r2]["x"]
@@ -83,10 +88,10 @@ class DifferentialEvolution(PopulationBasedHeuristics):
                 fx_matrix = [vector["fx"] for vector in self.population]
                 x_best = self.population[fx_matrix.index(min(fx_matrix))]["x"]
                 # Get Different Random Indexes
-                r1 = random.choice(list(set(self.index_list) - {i}))
-                r2 = random.choice(list(set(self.index_list) - {i, r1}))
-                r3 = random.choice(list(set(self.index_list) - {i, r1, r2}))
-                r4 = random.choice(list(set(self.index_list) - {i, r1, r2, r3}))
+                r1 = choice(list(set(self.index_list) - {i}))
+                r2 = choice(list(set(self.index_list) - {i, r1}))
+                r3 = choice(list(set(self.index_list) - {i, r1, r2}))
+                r4 = choice(list(set(self.index_list) - {i, r1, r2, r3}))
                 # Get associated vectors
                 x1 = self.population[r1]["x"]
                 x2 = self.population[r2]["x"]
@@ -101,11 +106,11 @@ class DifferentialEvolution(PopulationBasedHeuristics):
                 # Get best vector
                 fx_matrix = [vector["fx"] for vector in self.population]
                 # Get Different Random Indexes
-                r0 = random.choice(list(set(self.index_list) - {i}))
-                r1 = random.choice(list(set(self.index_list) - {i, r0}))
-                r2 = random.choice(list(set(self.index_list) - {i, r0, r1}))
-                r3 = random.choice(list(set(self.index_list) - {i, r0, r1, r2}))
-                r4 = random.choice(list(set(self.index_list) - {i, r0, r1, r2, r3}))
+                r0 = choice(list(set(self.index_list) - {i}))
+                r1 = choice(list(set(self.index_list) - {i, r0}))
+                r2 = choice(list(set(self.index_list) - {i, r0, r1}))
+                r3 = choice(list(set(self.index_list) - {i, r0, r1, r2}))
+                r4 = choice(list(set(self.index_list) - {i, r0, r1, r2, r3}))
                 # Get associated vectors
                 x0 = self.population[r0]["x"]
                 x1 = self.population[r1]["x"]
@@ -125,13 +130,14 @@ class DifferentialEvolution(PopulationBasedHeuristics):
         """
         Recombination Heuristic
 
-        - For each x_i in population
-            - Select random number rnd in [0, 1]
-            - Select random population index rnd_index
-            - Select random xr, vr from population and mutation matrix
-            - For each x_i,j in x_i
-                - if rnd <= CR or j = rnd_index, u_i,j = v_r,j else u_i,j = x_r,j
-            - add u_i to Recombination Matrix
+        - For each :math:`x_i` in population
+            - Select random number :math:`\text{rnd}` in :math:`[0, 1]`
+            - Select random population index :math:`\text{rnd}_{index}`
+            - Select random :math:`x_r`, :math:`v_r` from population and mutation matrix
+            - For each :math:`x_{i,j}` in :math:`x_{i}`
+                - if :math:`\text{rnd} < \text{CR}` or :math:`j = \text{rnd_{index}}`,
+                  :math:`u_{i,j} = v_{r,j}` else :math:`u_{i,j} = x_{r,j}`
+            - add :math:`u_i` to Recombination Matrix
         :param list mutation_matrix: Mutation Matrix
         :return list: Recombination Matrix
         """
@@ -140,7 +146,7 @@ class DifferentialEvolution(PopulationBasedHeuristics):
             xr = self.population[i]["x"]
             vr = mutation_matrix[i]["x"]
             recombination_matrix.append({"x": [
-                vr[j] if random.random() <= self.cr or j == random.choice(self.index_list)
+                vr[j] if random() <= self.cr or j == choice(self.index_list)
                 else xr[j] for j in range(self.dimension)]})
         
         return self.evaluate_population(recombination_matrix)
@@ -149,8 +155,8 @@ class DifferentialEvolution(PopulationBasedHeuristics):
         """
         Selection Heuristic
 
-        - For each x_i in population
-            - Select best between x_i and u_i from population and recombination matrix
+        - For each :math:`x_i` in population
+            - Select best between :math:`x_i` and :math:`u_i` from population and recombination matrix
             - Add the best to the new population
         :param list recombination_matrix: Recombination Matrix
         :return list: Selection Matrix

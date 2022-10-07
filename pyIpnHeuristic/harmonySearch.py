@@ -1,5 +1,5 @@
 from . import PopulationBasedHeuristics
-import random
+from random import random, choice, uniform
 
 
 class HarmonySearch(PopulationBasedHeuristics):
@@ -17,15 +17,15 @@ class HarmonySearch(PopulationBasedHeuristics):
         """
         Create New Harmony from the current population
 
-        - For j in [0, dimension]
-            - Select random x_i,j from population
-            - Get new harmony nh_i,j = x_i,j
+        - For :math:`j` in :math:`[0, d]`
+            - Select random :math:`x_{i,j}` from population
+            - Get new harmony :math:`\text{new_harmony}_{i,j} = x_{i,j}`
         :return dict: New harmony
         """
         x = [self.population[i]["x"] for i in range(self.population_size)]
         return {
             "x": [
-                random.choice([x[i][j] for i in range(self.population_size)]) 
+                choice([x[i][j] for i in range(self.population_size)])
                 for j in range(self.dimension)
             ],
             "fx": None,
@@ -37,14 +37,14 @@ class HarmonySearch(PopulationBasedHeuristics):
         """
         Add noise to a given harmony
 
-        - For each j in [0, dimension]
-            - Set random number U in [-1, 1]
-            - h_i,j = x_i,j + alpha * U
+        - For :math:`j` in :math:`[0, d]`
+            - Set random number :math:`U` in :math:`[-1, 1]`
+            - :math:`h_{i,j}` = :math:`x_{i,j} + e U`, :math:`e` in :math:`[0, 1]`
         :param dict harmony: Harmony
         :return dict: Noisy Harmony
         """
         harmony["x"] = [
-            harmony["x"][j] + self.alpha * random.uniform(-1, 1)
+            harmony["x"][j] + self.alpha * uniform(-1, 1)
             for j in range(self.dimension)
         ]
         return harmony
@@ -57,11 +57,11 @@ class HarmonySearch(PopulationBasedHeuristics):
         fx = [self.population[i]["fx"] for i in range(self.population_size)]
         worst_index = fx.index(max(fx))
         worst_harmony = self.population[worst_index]
-        rnd = random.random()
+        rnd = random()
         
         # Create new Harmony
         if rnd <= self.hcmr:
-            rnd = random.random()
+            rnd = random()
             new_harmony = self.create_from_population()
             if rnd <= self.par:
                 new_harmony = self.add_noise(new_harmony)

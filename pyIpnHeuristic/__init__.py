@@ -12,21 +12,20 @@ class PopulationBasedHeuristics(object):
     def __init__(self, objective_function: Callable[..., Any], soft_constrains: List[Callable[..., Any]] = None,
                  hard_constrains: List[Callable[..., Any]] = None, ranges: list = None, population_size: int = 32,
                  smooth: bool = False, epsilon: float = 10**-4, **params):
-        """
+        r"""
         Initialize Population Based Heuristic algorithm.
         
         e.g.,
         
         objective_function:
         
-            ```
+        .. code-block:: python
             def objective_function(*x):
                 return x[0]**2 + x_[1]**2
-            ```
         
         soft_constrains $g_{i} (x) <= 0$:
-        
-            ```
+
+        .. code-block:: python
             def g1(*x) -> float or int:
                 return x[0]
                 
@@ -34,11 +33,10 @@ class PopulationBasedHeuristics(object):
                 return x[1]
             
             soft_constrains = [g1, g2]
-            ```
         
         hard_constrains $h_{i} (x) == 0$:
-        
-            ```
+
+        .. code-block:: python
             def h1(*x) -> float or int:
                 return x[0]
                 
@@ -46,15 +44,14 @@ class PopulationBasedHeuristics(object):
                 return x[1]
             
             hard_constrains = [h1, h2]
-            ```
             
         ranges:
             
             variables ranges:
         
-            ```
+        .. code-block:: python
             ranges = [[0, 100], [0, 90]]
-            ```
+
         :param FunctionType objective_function: Method to evaluate objective function
         :param list[FunctionType] soft_constrains: List of Soft constrains methods
         :param list[FunctionType] hard_constrains: List of Hard constrains methods
@@ -131,16 +128,19 @@ class PopulationBasedHeuristics(object):
         Evaluates objective function and constrains for a give population
         
         e.g.,
-        
-        P = [
+
+        Population:
+        .. code-block:: json
+        [
             { "x": [0.10, 0.20], fx: None, gx: None, hx: None },
             { "x": [0.05, 0.02], fx: None, gx: None, hx: None },
             { "x": [0.85, 0.72], fx: None, gx: None, hx: None }
         ]
 
-        ==> algorithm.evaluate_population(P)
-        
-        P = [
+        Evaluated population:
+
+        .. code-block:: json
+        [
             { "x": [0.10, 0.20], fx: 10.340, gx: 0, hx: 3.282 },
             { "x": [0.05, 0.02], fx: 1.0010, gx: 0, hx: -0.01 },
             { "x": [0.85, 0.72], fx: -35.02, gx: 0, hx: 5.439 }
