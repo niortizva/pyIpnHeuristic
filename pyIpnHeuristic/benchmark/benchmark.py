@@ -73,7 +73,7 @@ def get_pg02(n: int = 20) -> dict:
     def g2(*x):
         return sum(x) - 7.5 * n
 
-    ranges = [[0, 10] for _ in range(n)]
+    ranges = [[10**-4, 10] for _ in range(n)]
 
     x_best = [3.16246061572185, 3.12833142812967, 3.09479212988791, 3.06145059523469, 3.02792915885555,
               2.99382606701730, 2.95866871765285, 2.92184227312450, 0.49482511456933, 0.48835711005490,
@@ -522,7 +522,7 @@ def get_pg14() -> dict:
     def h3(*x):
         return x[2] + x[6] + x[7] + 2 * x[8] + x[9] - 1
 
-    ranges = [[0, 10] for _ in range(10)]
+    ranges = [[10**-4, 10] for _ in range(10)]
 
     x_best = [0.0406684113216282, 0.147721240492452, 0.783205732104114, 0.00141433931889084,
               0.485293636780388, 0.000693183051556082, 0.0274052040687766, 0.0179509660214818,
@@ -572,12 +572,234 @@ def get_pg15() -> dict:
     }
 
 
+def get_problem_g16_parameters(*x) -> dict:
+    """
+    Get Problem G16 parameters
+    :return dict: Parameters
+    """
+    y1 = x[1] + x[2] + 41.6
+    c1 = 0.024 * x[3] - 4.62
+    y2 = 12.5 / c1 + 12
+    c2 = 0.0003535 * (x[0]**2) + 0.5311 * x[0] + 0.08705 * y2 * x[0]
+    c3 = 0.052 * x[0] + 78 + 0.002377 * y2 * x[0]
+    y3 = c2 / c3
+    y4 = 19 * y3
+    c4 = 0.04782 * (x[0] - y3) + 0.1956 * (x[0] - y3)**2 / x[1] + 0.6376 * y4 + 1.594 * y3
+    c5 = 100 * x[1]
+    c6 = x[0] - y3 - y4
+    c7 = 0.950 - c4 / c5
+    y5 = c6 * c7
+    y6 = x[0] - y5 - y4 - y3
+    c8 = (y5 + y4) * 0.995
+    y7 = c8 / y1
+    y8 = c8 / 3798
+    c9 = y7 - 0.0663 * y7 / y8 - 0.3153
+    y9 = 96.82 / c9 + 0.321 * y1
+    y10 = 1.29 * y5 + 1.258 * y4 + 2.29 * y3 + 1.71 * y6
+    y11 = 1.71 * x[0] - 0.452 * y4 + 0.580 * y3
+    c10 = 12.3 / 752.3
+    c11 = (1.75 * y2) * (0.995 * x[0])
+    c12 = 0.995 * y10 + 1998
+    y12 = c10 * x[0] + c11 / c12
+    y13 = c12 - 1.75 * y2
+    y14 = 3623 + 64.4 * x[1] + 58.4 * x[2] + 146312 / (y9 + x[4])
+    c13 = 0.995 * y10 + 60.8 * x[1] + 48 * x[3] - 0.1121 * y14 - 5095
+    y15 = y13 / c13
+    y16 = 148000 - 331000 * y15 + 40 * y13 - 61 * y15 * y13
+    c14 = 2324 * y10 - 28740000 * y2
+    y17 = 14130000 - 1328 * y10 - 531 * y11 + c14 / c12
+    c15 = y13 / y15 - y13 / 0.52
+    c16 = 1.104 - 0.72 * y15
+    c17 = y9 + x[4]
+    return {"y1": y1, "c1": c1, "y2": y2, "c2": c2, "c3": c3, "y3": y3, "y4": y4, "c4": c4, "c5": c5, "c6": c6,
+            "c7": c7, "y5": y5, "y6": y6, "c8": c8, "y7": y7, "y8": y8, "c9": c9, "y9": y9, "y10": y10,
+            "y11": y11, "c10": c10, "c11": c11, "c12": c12, "y12": y12, "y13": y13, "y14": y14, "c13": c13,
+            "y15": y15, "y16": y16, "c14": c14, "y17": y17, "c15": c15, "c16": c16, "c17": c17}
+
+
 def get_pg16() -> dict:
     """
     Problem G16
     :return dict: Returns problem parameters
     """
-    pass
+
+    def objective_function(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return (0.000117 * cnt["y14"] + 0.1365 + 0.00002358 * cnt["y13"] + 0.000001502 * cnt["y16"] +
+                0.0321 * cnt["y12"] + 0.004324 * cnt["y5"] + 0.0001 * cnt["c15"] / cnt["c16"] +
+                37.84 * cnt["y2"] / cnt["c12"] - 0.0000005843 * cnt["y17"])
+
+    def g1(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return (0.28 / 0.72) * cnt["y5"] - cnt["y4"]
+
+    def g2(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return x[2] - 1.5 * x[1]
+
+    def g3(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 3496 * cnt["y2"] / cnt["c12"] - 21
+
+    def g4(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 110.6 + cnt["y1"] - 62212 / cnt["c17"]
+
+    def g5(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 213.1 - cnt["y1"]
+
+    def g6(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y1"] - 405.23
+
+    def g7(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 17.505 - cnt["y2"]
+
+    def g8(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y2"] - 1053.6667
+
+    def g9(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 11.275 - cnt["y3"]
+
+    def g11(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 214.228 - cnt["y4"]
+
+    def g12(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y4"] - 665.585
+
+    def g13(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 7.458 - cnt["y5"]
+
+    def g14(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y5"] - 584.463
+
+    def g15(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 0.961 - cnt["y6"]
+
+    def g16(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y6"] - 265.916
+
+    def g10(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y3"] - 35.03
+
+    def g17(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 1.612 - cnt["y7"]
+
+    def g18(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y7"] - 7.046
+
+    def g19(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 0.146 - cnt["y8"]
+
+    def g20(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y8"] - 0.222
+
+    def g21(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 107.99 - cnt["y9"]
+
+    def g22(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y9"] - 273.366
+
+    def g23(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 922.693 - cnt["y10"]
+
+    def g24(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y10"] - 1286.105
+
+    def g25(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 926.832 - cnt["y11"]
+
+    def g26(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y11"] - 1444.046
+
+    def g27(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 18.766 - cnt["y12"]
+
+    def g28(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y12"] - 537.141
+
+    def g29(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 1072.163 - cnt["y13"]
+
+    def g30(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y13"] - 3247.039
+
+    def g31(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 8961.448 - cnt["y14"]
+
+    def g32(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y14"] - 26844.086
+
+    def g33(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 0.063 - cnt["y15"]
+
+    def g34(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y15"] - 0.386
+
+    def g35(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 71084.33 - cnt["y16"]
+
+    def g36(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return - 140000 + cnt["y16"]
+
+    def g37(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return 2802713 - cnt["y17"]
+
+    def g38(*x):
+        cnt = get_problem_g16_parameters(*x)
+        return cnt["y17"] - 12146108
+
+    ranges = [[704.4148, 906.3855], [68.6, 288.88], [0, 134.75], [193, 287.0966], [25, 84.1988]]
+
+    x_best = [705.174537070090537, 68.5999999999999943, 102.899999999999991,
+              282.324931593660324, 37.5841164258054832]
+
+    fx_best = objective_function(*x_best)
+
+    return {
+        "objective_function": objective_function,
+        "gx": [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10,
+               g11, g12, g13, g14, g15, g16, g17, g18, g19, g20,
+               g21, g22, g23, g24, g25, g26, g27, g28, g29, g30,
+               g31, g32, g33, g34, g35, g36, g37, g38],
+        "hx": [],
+        "ranges": ranges,
+        "markdown": PROBLEM_G16,
+        "x": x_best,
+        "fx": fx_best
+    }
 
 
 def get_pg17() -> dict:
@@ -844,7 +1066,96 @@ def get_pg22() -> dict:
     Problem G22
     :return dict: Returns problem parameters
     """
-    pass
+    def objective_function(*x):
+        return x[0]
+
+    def g1(*x):
+        return - x[0] + x[1] ** 0.6 + x[2] + x[3]
+
+    def h1(*x):
+        return x[4] - 100000 * x[7] + 10 ** 7
+
+    def h2(*x):
+        return x[5] + 100000 * x[7] - 100000 * x[8]
+
+    def h3(*x):
+        return x[6] + 100000 * x[8] - 5 * 10 ** 7
+
+    def h4(*x):
+        return x[4] + 100000 * x[9] - 3.3 * 10 ** 7
+
+    def h5(*x):
+        return x[5] + 100000 * x[10] - 4.4 * 10 ** 7
+
+    def h6(*x):
+        return x[6] + 100000 * x[11] - 6.6 * 10 ** 7
+
+    def h7(*x):
+        return x[4] - 120 * x[1] * x[12]
+
+    def h8(*x):
+        return x[5] - 80 * x[2] * x[13]
+
+    def h9(*x):
+        return x[6] - 40 * x[3] * x[14]
+
+    def h10(*x):
+        return x[7] - x[10] + x[15]
+
+    def h11(*x):
+        return x[8] - x[11] + x[16]
+
+    def h12(*x):
+        return - x[17] + math.log(x[9] - 100)
+
+    def h13(*x):
+        return - x[18] + math.log(-x[7] + 300)
+
+    def h14(*x):
+        return - x[20] + math.log(x[15])
+
+    def h15(*x):
+        return - x[20] + math.log(-x[8] + 400)
+
+    def h16(*x):
+        return - x[21] + math.log(x[16])
+
+    def h17(*x):
+        return - x[7] - x[9] + x[12] * x[17] - x[12] * x[18] + 400
+
+    def h18(*x):
+        return x[7] - x[8] - x[10] + x[13] * x[20] - x[13] * x[20] + 400
+
+    def h19(*x):
+        return x[8] - x[11] - 4.60517 * x[14] + x[14] * x[21] + 100
+
+    ranges = [
+        [0, 20000], [0, 10**6], [0, 10**6], [0, 10**6],
+        [0, 10**7], [0, 10**7], [0, 10**7], [100, 299.99],
+        [100, 399.99], [100.01, 300], [100, 400], [100, 600],
+        [0, 500], [0, 500], [0, 500], [0.01, 300], [0.01, 400],
+        *[[-4.7, 6.25] for _ in range(5)]
+    ]
+
+    x_best = [236.430975504001054, 135.82847151732463, 204.818152544824585, 6446.54654059436416,
+              3007540.83940215595, 4074188.65771341929, 32918270.5028952882, 130.075408394314167,
+              170.817294970528621, 299.924591605478554, 399.258113423595205, 330.817294971142758,
+              184.51831230897065, 248.64670239647424, 127.658546694545862, 269.182627528746707,
+              160.000016724090955, 5.29788288102680571, 5.13529735903945728, 5.59531526444068827,
+              5.43444479314453499, 5.07517453535834395]
+
+    fx_best = objective_function(*x_best)
+
+    return {
+        "objective_function": objective_function,
+        "gx": [g1],
+        "hx": [h1, h2, h3, h4, h5, h6, h7, h8, h9, h10,
+               h11, h12, h13, h14, h15, h16, h17, h18, h19],
+        "ranges": ranges,
+        "markdown": PROBLEM_G22,
+        "x": x_best,
+        "fx": fx_best
+    }
 
 
 def get_pg23() -> dict:
@@ -852,7 +1163,45 @@ def get_pg23() -> dict:
     Problem G23
     :return dict: Returns problem parameters
     """
-    pass
+    def objective_function(*x):
+        return - 9 * x[4] - 15 * x[7] + 6 * x[0] + 16 * x[1] + 10 * (x[5] + x[6])
+
+    def g1(*x):
+        return x[8] * x[2] + 0.02 * x[5] - 0.025 * x[4]
+
+    def g2(*x):
+        return x[8] * x[3] + 0.02 * x[6] - 0.015 * x[7]
+
+    def h1(*x):
+        return x[0] + x[1] - x[2] - x[3]
+
+    def h2(*x):
+        return 0.03 * x[0] + 0.01 * x[1] - x[8] * (x[2] + x[3])
+
+    def h3(*x):
+        return x[2] + x[5] - x[4]
+
+    def h4(*x):
+        return x[3] + x[6] - x[7]
+
+    ranges = [[0, 300], [0, 300], [0, 100], [0, 200], [0, 100],
+              [0, 300], [0, 100], [0, 200], [0.01, 0.03]]
+
+    x_best = [0.00510000000000259465, 99.9947000000000514, 9.01920162996045897 * 10**-18,
+              99.9999000000000535, 0.000100000000027086086, 2.75700683389584542 * 10**-14,
+              99.9999999999999574, 200, 0.0100000100000100008]
+
+    fx_best = objective_function(*x_best)
+
+    return {
+        "objective_function": objective_function,
+        "gx": [g1, g2],
+        "hx": [h1, h2, h3, h4],
+        "ranges": ranges,
+        "markdown": PROBLEM_G23,
+        "x": x_best,
+        "fx": fx_best
+    }
 
 
 def get_pg24() -> dict:

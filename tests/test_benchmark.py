@@ -20,17 +20,17 @@ def test_benchmark():
     implemented = [1, 2, 3, 4,
                    5, 6, 7, 8,
                    9, 10, 11, 12,
-                   13, 14, 15,
+                   13, 14, 15, 16,
                    17, 18, 19, 20,
-                   21, 24]
+                   21, 22, 23, 24]
 
     for i in range(24):
         if i + 1 in implemented:
             problem_parameters = problems[i]()
             fx_best = problem_parameters["fx"]
-            if format(fx_best, '.6f') != format(solutions[i], '.6f'):
-                raise ValueError("Problem G{i}: FAILED, {fx_calc} != {fx_real}".format(
-                    i=i+1, fx_calc=format(fx_best, '.6f'), fx_real=format(solutions[i], '.6f')))
+            if abs(fx_best - solutions[i]) > 10**-2:
+                raise ValueError("Problem G{i}: FAILED, {fx_calc} != {fx_real}, {diff}".format(
+                    i=i+1, fx_calc=fx_best, fx_real=solutions[i], diff=abs(fx_best - solutions[i])))
 
             # Test Soft Restrictions
             for j in range(len(problem_parameters["gx"])):

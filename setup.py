@@ -32,7 +32,7 @@ def readme():
 setup(
     name='pyIpnHeuristic',
     packages=find_packages(exclude=['tests']),
-    version='0.3.0',
+    version='1.0.0',
     description='pyIpnHeuristic is a pure Python implementation of some heuristic algorithms',
     long_description=readme(),
     long_description_content_type='text/markdown',
