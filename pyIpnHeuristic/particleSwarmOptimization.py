@@ -28,14 +28,13 @@ class ParticleSwarmOptimization(PopulationBasedHeuristics):
             self.particles_best_values = [particle for particle in self.population]
 
         # Get best vector
-        fx_matrix = [particle["fx"] for particle in self.population]
-        g = self.population[fx_matrix.index(min(fx_matrix))]["x"]
+        g = self.get_best(self.population)
 
         # Calculate new particle velocity
         self.velocity = [
             [self.w * self.velocity[i][j] +
              self.c1 * random() * (self.particles_best_values[i]["x"][j] - self.population[i]["x"][j]) +
-             self.c2 * random() * (g[j] - self.population[i]["x"][j])
+             self.c2 * random() * (g["x"][j] - self.population[i]["x"][j])
              for j in range(self.dimension)]
             for i in range(self.population_size)]
 

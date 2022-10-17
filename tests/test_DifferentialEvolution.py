@@ -11,7 +11,7 @@ def test_differential_evolution():
         soft_constrains=problem_parameters.get("gx"),
         hard_constrains=problem_parameters.get("hx"),
         ranges=problem_parameters.get("ranges"),
-        population_size=4,
+        population_size=10,
         f=0.50,
         cr=0.10,
         epsilon=10**-4,

@@ -10,6 +10,12 @@ def test_population_based_heuristics():
     class Algorithm(PopulationBasedHeuristics):
         def __init__(self, *arg, **args):
             super().__init__(*arg, **args)
+
+        def population_enhancement(self):
+            pass
+
+        def stop_condition(self):
+            return False
             
     algorithm = Algorithm(
         problem_parameters.get("objective_function"),

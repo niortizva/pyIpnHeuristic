@@ -50,10 +50,35 @@ fx_best = problem.get("fx")
 ## Released Algorithms
 
 - Harmony Search
+
 ```python
 from pyIpnHeuristic.harmonySearch import HarmonySearch
     
 harmonySearch = HarmonySearch(
+    objective_function, # e.g, def f(*x): return x[0]**2 + x[1] **2
+    soft_constrains=g, # e.g, [def g(*x): return x[0], def g(*x): return x[0]**2]
+    hard_constrains=h, # e.g, [def h(*x): return x[1], def h(*x): return x[1]**2]
+    ranges=ranges, # e.g, [[0, 1], [0, 1]]
+    population_size=population_size, # e.g, 4
+    smooth=False, # If True, hard restrictions will be treated as soft restrictions
+    epsilon=10**-4, # If smmooth is True, then h(x) = 0 --> |h(x)| - epsilon <= 0
+    # Harmony Search Parameters
+    hcmr=hcmr,
+    par=par,
+    alpha=alpha
+)
+
+harmonySearch.search(
+    iterations=T, # Number of iterations to be made
+    save_history=True # Save the results for each iteration. Default False
+)
+```
+- Modified Harmony Search
+
+```python
+from pyIpnHeuristic.modifiedHarmonySearch import ModifiedHarmonySearch
+    
+harmonySearch = ModifiedHarmonySearch(
     objective_function, # e.g, def f(*x): return x[0]**2 + x[1] **2
     soft_constrains=g, # e.g, [def g(*x): return x[0], def g(*x): return x[0]**2]
     hard_constrains=h, # e.g, [def h(*x): return x[1], def h(*x): return x[1]**2]
@@ -89,7 +114,7 @@ differentialEvolution = DifferentialEvolution(
     ranges=ranges, # e.g, [[0, 1], [0, 1]]
     population_size=population_size, # e.g, 4
     smooth=False, # If True, hard restrictions will be treated as soft restrictions
-    epsilon=10**-4, # If smmooth is True, then h(x) = 0 --> |h(x)| - epsilon <= 0
+    epsilon=10**-4, # If smooth is True, then h(x) = 0 --> |h(x)| - epsilon <= 0
     # Differential Evolution Parameters
     type=de_type, # Types: "rand-1", "best-1", "current-to-best-1", "best-2, "rand-2", default: "rand-1"
     f=0.9,
@@ -125,5 +150,26 @@ particleSwarmOptimization.search(
     save_history=True # Save the results for each iteration. Default False
 )
 ```
+- Artificial Bee Colony
 
+```python
+from pyIpnHeuristic.artificialBeeColony import ArtificialBeeColony
 
+artificialBeeColony = ArtificialBeeColony(
+    objective_function, # e.g, def f(*x): return x[0]**2 + x[1] **2
+    soft_constrains=g, # e.g, [def g(*x): return x[0], def g(*x): return x[0]**2]
+    hard_constrains=h, # e.g, [def h(*x): return x[1], def h(*x): return x[1]**2]
+    ranges=ranges, # e.g, [[0, 1], [0, 1]]
+    population_size=population_size, # e.g, 4
+    smooth=False, # If True, hard restrictions will be treated as soft restrictions
+    epsilon=10**-4, # If smmooth is True, then h(x) = 0 --> |h(x)| - epsilon <= 0
+    # Artificial Bee Colony Parameters
+    mr=0.3,
+    max_trials=3,
+)
+
+artificialBeeColony.search(
+    iterations=T, # Number of iterations to be made
+    save_history=True # Save the results for each iteration. Default False
+)
+```

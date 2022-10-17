@@ -125,7 +125,7 @@ class PopulationBasedHeuristics(object):
     
     def evaluate_population(self, population: List[dict]) -> List[dict]:
         """
-        Evaluates objective function and constrains for a give population
+        Evaluates objective function and constrains for a given population
         
         e.g.,
 
@@ -148,8 +148,8 @@ class PopulationBasedHeuristics(object):
         :return list[dict]: Return evaluated population
         """
         return [
-            self.evaluate_individual(population[i])
-            for i in range(self.population_size)
+            self.evaluate_individual(x)
+            for x in population
         ]
     
     def evaluate_individual(self, individual: dict) -> dict:
@@ -170,6 +170,18 @@ class PopulationBasedHeuristics(object):
                                     for hi in self.hard_constrains])
             
         return individual
+
+    def get_best(self, population: List[dict]) -> dict:
+        """
+        Gets the best individual for a given population using DEB conditions
+        :return dict: Best individual
+        """
+        best_index = 0
+        pop = [{**population[j], "index": j} for j in range(len(population))]
+        for i in range(1, len(population)):
+            best = self.comparison(pop[best_index], pop[i])
+            best_index = best["index"]
+        return pop[best_index]
     
     @staticmethod
     def comparison(xi: dict, xj: dict) -> dict:

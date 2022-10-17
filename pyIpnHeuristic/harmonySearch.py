@@ -54,7 +54,7 @@ class HarmonySearch(PopulationBasedHeuristics):
         Population Enhancement Method
         :return None:
         """
-        fx = [self.population[i]["fx"] for i in range(self.population_size)]
+        fx = [x["fx"] for x in self.population]
         worst_index = fx.index(max(fx))
         worst_harmony = self.population[worst_index]
         rnd = random()

@@ -54,57 +54,52 @@ class DifferentialEvolution(PopulationBasedHeuristics):
                 mutation_matrix.append(self.fix_ranges({"x": [x1[j] + self.f * (x2[j] - x3[j])
                                                               for j in range(self.dimension)]}))
         elif self.type == "best-1":
+            # Get best vector
+            x_best = self.get_best(self.population)
             for i in range(self.population_size):
-                # Get best vector
-                fx_matrix = [vector["fx"] for vector in self.population]
-                x_best = self.population[fx_matrix.index(min(fx_matrix))]["x"]
                 # Get Different Random Indexes
-                r1 = choice(list(set(self.index_list) - {i}))
-                r2 = choice(list(set(self.index_list) - {i, r1}))
+                r1 = choice(list(set(self.index_list) - {i, x_best["index"]}))
+                r2 = choice(list(set(self.index_list) - {i, x_best["index"], r1}))
                 # Get associated vectors
                 x1 = self.population[r1]["x"]
                 x2 = self.population[r2]["x"]
-                mutation_matrix.append(self.fix_ranges({"x": [x_best[j] + self.f * (x1[j] - x2[j])
+                mutation_matrix.append(self.fix_ranges({"x": [x_best["x"][j] + self.f * (x1[j] - x2[j])
                                                               for j in range(self.dimension)]}))
         elif self.type == "current-to-best-1":
+            # Get best vector
+            x_best = self.get_best(self.population)
             for i in range(self.population_size):
-                # Get best vector
-                fx_matrix = [vector["fx"] for vector in self.population]
-                x_best = self.population[fx_matrix.index(min(fx_matrix))]["x"]
                 x_current = self.population[i]["x"]
                 # Get Different Random Indexes
-                r1 = choice(list(set(self.index_list) - {i}))
-                r2 = choice(list(set(self.index_list) - {i, r1}))
+                r1 = choice(list(set(self.index_list) - {i, x_best["index"]}))
+                r2 = choice(list(set(self.index_list) - {i, x_best["index"], r1}))
                 # Get associated vectors
                 x1 = self.population[r1]["x"]
                 x2 = self.population[r2]["x"]
                 mutation_matrix.append(self.fix_ranges({"x": [
-                    x_current[j] + self.f * (x_best[j] - x_current[j]) + self.f * (x1[j] - x2[j])
+                    x_current[j] + self.f * (x_best["x"][j] - x_current[j]) + self.f * (x1[j] - x2[j])
                     for j in range(self.dimension)
                 ]}))
         elif self.type == "best-2":
+            # Get best vector
+            x_best = self.get_best(self.population)
             for i in range(self.population_size):
-                # Get best vector
-                fx_matrix = [vector["fx"] for vector in self.population]
-                x_best = self.population[fx_matrix.index(min(fx_matrix))]["x"]
                 # Get Different Random Indexes
-                r1 = choice(list(set(self.index_list) - {i}))
-                r2 = choice(list(set(self.index_list) - {i, r1}))
-                r3 = choice(list(set(self.index_list) - {i, r1, r2}))
-                r4 = choice(list(set(self.index_list) - {i, r1, r2, r3}))
+                r1 = choice(list(set(self.index_list) - {i, x_best["index"]}))
+                r2 = choice(list(set(self.index_list) - {i, x_best["index"], r1}))
+                r3 = choice(list(set(self.index_list) - {i, x_best["index"], r1, r2}))
+                r4 = choice(list(set(self.index_list) - {i, x_best["index"], r1, r2, r3}))
                 # Get associated vectors
                 x1 = self.population[r1]["x"]
                 x2 = self.population[r2]["x"]
                 x3 = self.population[r3]["x"]
                 x4 = self.population[r4]["x"]
                 mutation_matrix.append(self.fix_ranges({"x": [
-                    x_best[j] + self.f * (x1[j] - x2[j]) + self.f * (x3[j] - x4[j])
+                    x_best["x"][j] + self.f * (x1[j] - x2[j]) + self.f * (x3[j] - x4[j])
                     for j in range(self.dimension)
                 ]}))
         elif self.type == "rand-2":
             for i in range(self.population_size):
-                # Get best vector
-                fx_matrix = [vector["fx"] for vector in self.population]
                 # Get Different Random Indexes
                 r0 = choice(list(set(self.index_list) - {i}))
                 r1 = choice(list(set(self.index_list) - {i, r0}))
