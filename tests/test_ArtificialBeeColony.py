@@ -16,7 +16,7 @@ def test_artificial_bee_colony():
         epsilon=10 ** -4,
     )
 
-    artificial_bee_colony.search(iterations=200000, save_history=False)
+    artificial_bee_colony.search(iterations=2, save_history=False)
 
     print(artificial_bee_colony.population[-1])
 

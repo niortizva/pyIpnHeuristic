@@ -1,5 +1,6 @@
 from . import PopulationBasedHeuristics
 from . differentialEvolution import DifferentialEvolution
+from typing import List
 from random import random, choice
 from copy import copy
 
@@ -67,6 +68,21 @@ class HybridModifiedPsoAndEd(PopulationBasedHeuristics):
         # Add selection step
         return self.comparison(xi, new_position)
 
+    def generate_de_population(self, g: dict) -> List[dict]:
+        """
+        Generates differential evolution population
+        :g dict: The best PSO solution
+        :return List[dict]: Return new population from
+        """
+        r1 = choice(self.index_list)
+        r2 = choice(list(set(self.index_list) - {r1}))
+        new_population = [{
+            "x": [g["x"][i] + random() * (self.population[r1]["x"][i] - self.population[r2]["x"][i])
+                  for i in range(self.dimension)]
+            if random() < self.differential_evolution.cr else self.create_individual()["x"]
+        } for _ in range(self.population_size)]
+        return self.evaluate_population(new_population)
+
     def population_enhancement(self) -> None:
         """
         Population Enhancement Method
@@ -84,10 +100,12 @@ class HybridModifiedPsoAndEd(PopulationBasedHeuristics):
             # Calculate new particle position
             self.population = [self.update_position(xi, vi)
                                for xi, vi in zip(self.population, self.velocity)]
-
+        # Find the best PSO particle
+        # g = self.get_best(self.population)
         # Differential Evolution Step
         self.differential_evolution.set_custom_population(self.population)
         self.differential_evolution.search(iterations=self.de_trials)
+        self.function_evaluations += self.differential_evolution.population[-1]["fes"]
 
         self.population = copy(self.differential_evolution.population)
 

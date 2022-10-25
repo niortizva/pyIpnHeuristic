@@ -1,5 +1,6 @@
 from . import PopulationBasedHeuristics
 from random import random, choice, uniform
+from copy import copy
 
 
 class HarmonySearch(PopulationBasedHeuristics):
@@ -71,7 +72,7 @@ class HarmonySearch(PopulationBasedHeuristics):
         new_harmony = self.evaluate_individual(new_harmony)
         
         # Select best harmony between worst and new
-        self.population[worst_index] = self.comparison(worst_harmony, new_harmony)
+        self.population[worst_index] = copy(self.comparison(worst_harmony, new_harmony))
         
     def stop_condition(self) -> bool:
         return False

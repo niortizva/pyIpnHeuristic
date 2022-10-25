@@ -1,10 +1,11 @@
 from typing import List
 from .harmonySearch import HarmonySearch
 from random import random
+from copy import copy
 
 
 class ModifiedHarmonySearch(HarmonySearch):
-    """
+    r"""
     Modified Harmony Search Algorithm
 
     In order to get the worst harmony of the current generation we use DEB conditions such as:
@@ -74,7 +75,7 @@ class ModifiedHarmonySearch(HarmonySearch):
         new_harmony = self.evaluate_individual(new_harmony)
 
         # Select best harmony between worst and new
-        self.population[worst_index] = self.comparison(worst_harmony, new_harmony)
+        self.population[worst_index] = copy(self.comparison(worst_harmony, new_harmony))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,1178 @@
+[
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg01",
+        "mr": 0.1924,
+        "error": 3.2141156855191038,
+        "*fx": -15,
+        "fx": -63.9581472980324
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg01",
+        "w": 0.3345,
+        "c1": 1.8437,
+        "c2": 0.5589,
+        "error": 0.15089802348726924,
+        "*fx": -15,
+        "fx": -21.501659331074578
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg01",
+        "f": 0.3831,
+        "cr": 0.291,
+        "error": 0.39169942507881667,
+        "*fx": -15,
+        "fx": -12.893722050462012
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg01",
+        "hcmr": 0.2237,
+        "par": 0.4609,
+        "alpha": -0.3568,
+        "error": 2.134500049772659,
+        "*fx": -15,
+        "fx": -40.72874764670953
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg01",
+        "w": 0.0689,
+        "c1": 0.7059,
+        "c2": 0.5516,
+        "f": 0.5993,
+        "cr": 0.6621,
+        "error": 7.501137157343389e-08,
+        "*fx": -15,
+        "fx": -14.99999799601516
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg02",
+        "mr": 0.5823,
+        "error": 0.8142102568574533,
+        "*fx": -0.8036191041255873,
+        "fx": -0.1624620898196497
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg02",
+        "w": 0.1853,
+        "c1": 1.0429,
+        "c2": 1.9123,
+        "error": 0.6006634162838155,
+        "*fx": -0.8036191041255873,
+        "fx": -0.30207056134258087
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg02",
+        "f": 0.0637,
+        "cr": 0.1507,
+        "error": 0.1765378443964893,
+        "*fx": -0.8036191041255873,
+        "fx": -0.5924463761068491
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg02",
+        "hcmr": 0.989,
+        "par": 0.579,
+        "alpha": -0.4648,
+        "error": 0.7188720658703021,
+        "*fx": -0.8036191041255873,
+        "fx": -0.3322309361269042
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg02",
+        "w": 0.3437,
+        "c1": 0.5001,
+        "c2": 0.3211,
+        "f": 0.541,
+        "cr": 0.2455,
+        "error": 0.05104731955519433,
+        "*fx": -0.8036191041255873,
+        "fx": -0.7653789948034777
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg03",
+        "mr": 0.1112,
+        "error": 0.9694944521016138,
+        "*fx": -1.000500100010001,
+        "fx": -0.32898628052223094
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg03",
+        "w": 0.029,
+        "c1": 1.0999,
+        "c2": 1.0896,
+        "error": 0.2071220604331405,
+        "*fx": -1.000500100010001,
+        "fx": -0.8507865642258242
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg03",
+        "f": -0.9084,
+        "cr": 0.9769,
+        "error": 0.5396792968939885,
+        "*fx": -1.000500100010001,
+        "fx": -0.17926729621729678
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg03",
+        "hcmr": 0.5985,
+        "par": 0.8536,
+        "alpha": 0.8718,
+        "error": 0.989869367179074,
+        "*fx": -1.000500100010001,
+        "fx": -0.006852095045217835
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg03",
+        "w": 0.1462,
+        "c1": 0.9544,
+        "c2": 0.2766,
+        "f": 0.1199,
+        "cr": 0.7723,
+        "error": 0.9980060872250716,
+        "*fx": -1.000500100010001,
+        "fx": -0.05800224597493203
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg04",
+        "mr": 0.5537,
+        "error": 0.07283627501766608,
+        "*fx": -30665.538671783317,
+        "fx": -28577.824956535613
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg04",
+        "w": 0.7283,
+        "c1": 0.4597,
+        "c2": 0.8383,
+        "error": 0.03260694773530283,
+        "*fx": -30665.538671783317,
+        "fx": -29583.14827595689
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg04",
+        "f": 0.8184,
+        "cr": 0.5587,
+        "error": 0.016363955063596797,
+        "*fx": -30665.538671783317,
+        "fx": -30445.87695675608
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg04",
+        "hcmr": 0.5094,
+        "par": 0.4827,
+        "alpha": -0.5144,
+        "error": 0.037364732549127026,
+        "*fx": -30665.538671783317,
+        "fx": -29843.633891830912
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg04",
+        "w": 0.7919,
+        "c1": 1.6216,
+        "c2": 1.0548,
+        "f": 0.9362,
+        "cr": 0.8054,
+        "error": 6.559493381314474e-07,
+        "*fx": -30665.538671783317,
+        "fx": -30665.538125875566
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg05",
+        "mr": 0.4424,
+        "error": 0.6144479027460165,
+        "*fx": 5126.4967140071,
+        "fx": 674.3321787053707
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg05",
+        "w": 0.5469,
+        "c1": 0.4425,
+        "c2": 1.0913,
+        "error": 0.5053371341799285,
+        "*fx": 5126.4967140071,
+        "fx": 6774.921682765089
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg05",
+        "f": -0.8956,
+        "cr": 0.7661,
+        "error": 0.24584382718002284,
+        "*fx": 5126.4967140071,
+        "fx": 4084.317033862662
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg05",
+        "hcmr": 0.487,
+        "par": 0.7375,
+        "alpha": -0.4823,
+        "error": 0.15976673679848952,
+        "*fx": 5126.4967140071,
+        "fx": 3611.957286630988
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg05",
+        "w": 0.0789,
+        "c1": 1.0752,
+        "c2": 1.1123,
+        "f": 0.872,
+        "cr": 0.6106,
+        "error": 0.2464364901563555,
+        "*fx": 5126.4967140071,
+        "fx": 6382.089524173401
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg06",
+        "mr": 0.979,
+        "error": 8.207313600171535,
+        "*fx": -6961.813875580138,
+        "fx": 127230.12287583253
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg06",
+        "w": 0.2594,
+        "c1": 1.1469,
+        "c2": 1.3211,
+        "error": 0.5458364521419136,
+        "*fx": -6961.813875580138,
+        "fx": -1561.7971762611583
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg06",
+        "f": -0.8136,
+        "cr": 0.8541,
+        "error": 0.6449601443538379,
+        "*fx": -6961.813875580138,
+        "fx": -4724.229453858032
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg06",
+        "hcmr": 0.6196,
+        "par": 0.5881,
+        "alpha": -0.2301,
+        "error": 1.0237479872385418,
+        "*fx": -6961.813875580138,
+        "fx": -2195.066342328186
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg06",
+        "w": 0.3337,
+        "c1": 0.6016,
+        "c2": 0.7627,
+        "f": 0.9979,
+        "cr": 0.6809,
+        "error": 4.695218827434562e-13,
+        "*fx": -6961.813875580138,
+        "fx": -6961.8138755801665
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg07",
+        "mr": 0.3888,
+        "error": 65.73963538792694,
+        "*fx": 24.30620906817991,
+        "fx": 1486.7758936485268
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg07",
+        "w": 0.2727,
+        "c1": 1.8812,
+        "c2": 1.581,
+        "error": 22.040195815275176,
+        "*fx": 24.30620906817991,
+        "fx": 385.0717918809931
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg07",
+        "f": 0.5863,
+        "cr": 0.1872,
+        "error": 3.180552074875025,
+        "*fx": 24.30620906817991,
+        "fx": 42.22956894867898
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg07",
+        "hcmr": 0.5258,
+        "par": 0.4811,
+        "alpha": 0.4351,
+        "error": 44.82718425425147,
+        "*fx": 24.30620906817991,
+        "fx": 445.2889253245027
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg07",
+        "w": 0.5812,
+        "c1": 0.2541,
+        "c2": 1.6055,
+        "f": 0.8276,
+        "cr": 0.9074,
+        "error": 0.0008483058882912889,
+        "*fx": 24.30620906817991,
+        "fx": 24.31899621184293
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg08",
+        "mr": 0.4735,
+        "error": 1.0000127309218472,
+        "*fx": -0.09582504141803586,
+        "fx": -0.00021507409061202287
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg08",
+        "w": 0.8056,
+        "c1": 0.1303,
+        "c2": 0.1042,
+        "error": 1.0000199884750254,
+        "*fx": -0.09582504141803586,
+        "fx": -0.09582503097092364
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg08",
+        "f": -0.5255,
+        "cr": 0.1546,
+        "error": 1.0003405160924177,
+        "*fx": -0.09582504141803586,
+        "fx": -0.0958150075226744
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg08",
+        "hcmr": 0.2572,
+        "par": 0.878,
+        "alpha": -0.6913,
+        "error": 0.969623352890811,
+        "*fx": -0.09582504141803586,
+        "fx": 0.05502696372212452
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg08",
+        "w": 0.1306,
+        "c1": 0.1722,
+        "c2": 1.4755,
+        "f": 0.544,
+        "cr": 0.3914,
+        "error": 1.4482422968410455e-16,
+        "*fx": -0.09582504141803586,
+        "fx": -0.09582504141803586
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg09",
+        "mr": 0.219,
+        "error": 109.82386495808416,
+        "*fx": 680.6300573744021,
+        "fx": 75534.74042106904
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg09",
+        "w": 0.5587,
+        "c1": 1.3481,
+        "c2": 1.442,
+        "error": 0.07693547297745065,
+        "*fx": 680.6300573744021,
+        "fx": 692.0061435974351
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg09",
+        "f": 0.6554,
+        "cr": 0.3427,
+        "error": 0.013416949970994435,
+        "*fx": 680.6300573744021,
+        "fx": 880.236931801338
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg09",
+        "hcmr": 0.8971,
+        "par": 0.0322,
+        "alpha": 0.4664,
+        "error": 14.710296891486077,
+        "*fx": 680.6300573744021,
+        "fx": 10141.619158060961
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg09",
+        "w": 0.051,
+        "c1": 0.7393,
+        "c2": 0.7103,
+        "f": 0.8356,
+        "cr": 0.2135,
+        "error": 0.0003791474431791322,
+        "*fx": 680.6300573744021,
+        "fx": 680.7305740916593
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg10",
+        "mr": 0.5565,
+        "error": 1.8676289177378234,
+        "*fx": 7049.248020528668,
+        "fx": 12181.514127197013
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg10",
+        "w": 0.8239,
+        "c1": 1.8507,
+        "c2": 1.6011,
+        "error": 1.7423071717560588,
+        "*fx": 7049.248020528668,
+        "fx": 9720.131040872326
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg10",
+        "f": -0.0324,
+        "cr": 0.2212,
+        "error": 2.0003902142273695,
+        "*fx": 7049.248020528668,
+        "fx": 18636.365513660327
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg10",
+        "hcmr": 0.3045,
+        "par": 0.7875,
+        "alpha": -0.3134,
+        "error": 1.7647782534887184,
+        "*fx": 7049.248020528668,
+        "fx": 11479.569813181422
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg10",
+        "w": 0.6594,
+        "c1": 1.3359,
+        "c2": 0.3545,
+        "f": 0.9203,
+        "cr": 0.6942,
+        "error": 0.0495316616302928,
+        "*fx": 7049.248020528668,
+        "fx": 7201.038931092716
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg11",
+        "mr": 0.3774,
+        "error": 0.3311968494214591,
+        "*fx": 0.7499,
+        "fx": 1.1509902330507904
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg11",
+        "w": 0.3021,
+        "c1": 0.1481,
+        "c2": 0.456,
+        "error": 0.22121787800354223,
+        "*fx": 0.7499,
+        "fx": 0.9504282170937873
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg11",
+        "f": 0.6017,
+        "cr": 0.4215,
+        "error": 0.14063622559955155,
+        "*fx": 0.7499,
+        "fx": 0.9986905942797376
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg11",
+        "hcmr": 0.5378,
+        "par": 0.2462,
+        "alpha": 0.1305,
+        "error": 0.31393925225227,
+        "*fx": 0.7499,
+        "fx": 0.9432817960867144
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg11",
+        "w": 0.1166,
+        "c1": 0.387,
+        "c2": 1.526,
+        "f": 0.6362,
+        "cr": 0.5515,
+        "error": 0.1992391905005534,
+        "*fx": 0.7499,
+        "fx": 0.7548249543998806
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg12",
+        "mr": 0.1228,
+        "error": 0.3701218329119341,
+        "*fx": -1.0,
+        "fx": -0.7352125451225221
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg12",
+        "w": 0.4356,
+        "c1": 1.0565,
+        "c2": 1.7728,
+        "error": 0.07601309737344975,
+        "*fx": -1.0,
+        "fx": -0.9228483336760656
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg12",
+        "f": -0.6812,
+        "cr": 0.1232,
+        "error": 0.007545605149950729,
+        "*fx": -1.0,
+        "fx": -0.9998982356771206
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg12",
+        "hcmr": 0.5917,
+        "par": 0.6749,
+        "alpha": 0.8752,
+        "error": 0.05108696109476496,
+        "*fx": -1.0,
+        "fx": -0.958716643194477
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg12",
+        "w": 0.1726,
+        "c1": 0.9404,
+        "c2": 1.3587,
+        "f": 0.6507,
+        "cr": 0.5878,
+        "error": 0.0,
+        "*fx": -1.0,
+        "fx": -1.0
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg13",
+        "mr": 0.834,
+        "error": 18.057596249535976,
+        "*fx": 0.05394151404189802,
+        "fx": 1.321209779335358
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg13",
+        "w": 0.5437,
+        "c1": 0.55,
+        "c2": 1.0264,
+        "error": 17.044867965144043,
+        "*fx": 0.05394151404189802,
+        "fx": 1.1623801305641626
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg13",
+        "f": 0.5106,
+        "cr": 0.3568,
+        "error": 17.535911965794995,
+        "*fx": 0.05394151404189802,
+        "fx": 1.1297179544873472
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg13",
+        "hcmr": 0.2321,
+        "par": 0.8811,
+        "alpha": 0.4693,
+        "error": 19.593700405685844,
+        "*fx": 0.05394151404189802,
+        "fx": 0.0637676114275055
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg13",
+        "w": 0.8542,
+        "c1": 0.7915,
+        "c2": 0.4269,
+        "f": 0.6333,
+        "cr": 0.8078,
+        "error": 17.933118495335307,
+        "*fx": 0.05394151404189802,
+        "fx": 0.9794450119627408
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg14",
+        "mr": 0.2598,
+        "error": 13.593541854072472,
+        "*fx": -47.764888459491466,
+        "fx": -451.8781988590108
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg14",
+        "w": 0.0685,
+        "c1": 1.7432,
+        "c2": 1.3977,
+        "error": 5.037049790327701,
+        "*fx": -47.764888459491466,
+        "fx": -514.4010839790226
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg14",
+        "f": 0.6245,
+        "cr": 0.4051,
+        "error": 0.14538948624717557,
+        "*fx": -47.764888459491466,
+        "fx": -45.679718414708255
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg14",
+        "hcmr": 0.5163,
+        "par": 0.1567,
+        "alpha": 0.7873,
+        "error": 11.630861626323185,
+        "*fx": -47.764888459491466,
+        "fx": -407.69532749551155
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg14",
+        "w": 0.2248,
+        "c1": 1.7056,
+        "c2": 1.836,
+        "f": 0.3393,
+        "cr": 0.078,
+        "error": 0.1599165061204114,
+        "*fx": -47.764888459491466,
+        "fx": -42.315211867162695
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg15",
+        "mr": 0.2197,
+        "error": 0.031174905095241266,
+        "*fx": 961.7150222899609,
+        "fx": 939.0985651469945
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg15",
+        "w": 0.0422,
+        "c1": 0.8652,
+        "c2": 0.5945,
+        "error": 0.012157722466804976,
+        "*fx": 961.7150222899609,
+        "fx": 915.6960539083911
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg15",
+        "f": 0.7144,
+        "cr": 0.8879,
+        "error": 0.004672011334331186,
+        "*fx": 961.7150222899609,
+        "fx": 972.2314136140308
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg15",
+        "hcmr": 0.8436,
+        "par": 0.2275,
+        "alpha": -0.7039,
+        "error": 0.012508687185019568,
+        "*fx": 961.7150222899609,
+        "fx": 974.1284987114948
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg15",
+        "w": 0.7581,
+        "c1": 0.392,
+        "c2": 0.1444,
+        "f": 0.2251,
+        "cr": 0.4189,
+        "error": 0.002995735901141996,
+        "*fx": 961.7150222899609,
+        "fx": 977.9495953408009
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg16",
+        "mr": 0.5792,
+        "error": 2.559918615422403,
+        "*fx": -1.9029927871389054,
+        "fx": -0.826524902593583
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg16",
+        "w": 0.85,
+        "c1": 1.25,
+        "c2": 1.3932,
+        "error": 0.7525694722378539,
+        "*fx": -1.9029927871389054,
+        "fx": 0.18474944870624466
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg16",
+        "f": -0.932,
+        "cr": 0.5465,
+        "error": 0.16795507047965152,
+        "*fx": -1.9029927871389054,
+        "fx": -1.8066188301701072
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg16",
+        "hcmr": 0.7073,
+        "par": 0.1297,
+        "alpha": 0.185,
+        "error": 0.34190728113526514,
+        "*fx": -1.9029927871389054,
+        "fx": -0.8120926074563295
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg16",
+        "w": 0.9489,
+        "c1": 1.3388,
+        "c2": 1.8782,
+        "f": 0.9783,
+        "cr": 0.7961,
+        "error": 6.342709721200956e-08,
+        "*fx": -1.9029927871389054,
+        "fx": -1.9029926444727296
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg17",
+        "mr": 0.2986,
+        "error": 2.103843525512351,
+        "*fx": 8853.534016435708,
+        "fx": 8751.785111243866
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg17",
+        "w": 0.7914,
+        "c1": 1.6412,
+        "c2": 0.4685,
+        "error": 0.4468136023651888,
+        "*fx": 8853.534016435708,
+        "fx": 9974.119548841343
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg17",
+        "f": 0.6069,
+        "cr": 0.2138,
+        "error": 0.10445470487988706,
+        "*fx": 8853.534016435708,
+        "fx": 8527.576901703125
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg17",
+        "hcmr": 0.6926,
+        "par": 0.8019,
+        "alpha": 0.4753,
+        "error": 0.19576930379147459,
+        "*fx": 8853.534016435708,
+        "fx": 9604.805794089938
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg17",
+        "w": 0.0563,
+        "c1": 0.998,
+        "c2": 1.0452,
+        "f": 0.5105,
+        "cr": 0.8324,
+        "error": 0.009527023039282741,
+        "*fx": 8853.534016435708,
+        "fx": 8878.107500130796
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg18",
+        "mr": 0.6881,
+        "error": 25.65235070295887,
+        "*fx": -0.8660254037844387,
+        "fx": -9.547359958662934
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg18",
+        "w": 0.7268,
+        "c1": 1.3095,
+        "c2": 0.928,
+        "error": 0.5898648375718868,
+        "*fx": -0.8660254037844387,
+        "fx": 1.2331394930235327
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg18",
+        "f": -0.934,
+        "cr": 0.6419,
+        "error": 4.151526641750278,
+        "*fx": -0.8660254037844387,
+        "fx": -0.3191967729204909
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg18",
+        "hcmr": 0.0329,
+        "par": 0.3499,
+        "alpha": 0.3955,
+        "error": 11.218178572079644,
+        "*fx": -0.8660254037844387,
+        "fx": 1.546878943472592
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg18",
+        "w": 0.1678,
+        "c1": 0.4741,
+        "c2": 1.8574,
+        "f": 0.58,
+        "cr": 0.786,
+        "error": 0.00016496738709467803,
+        "*fx": -0.8660254037844387,
+        "fx": -0.866017106908576
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg19",
+        "mr": 0.3654,
+        "error": 291.59179375580015,
+        "*fx": 32.65559295024633,
+        "fx": 5992.126278172394
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg19",
+        "w": 0.8887,
+        "c1": 0.7465,
+        "c2": 0.1012,
+        "error": 41.770725433497624,
+        "*fx": 32.65559295024633,
+        "fx": 803.3192750508023
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg19",
+        "f": -0.6403,
+        "cr": 0.8433,
+        "error": 8.61130129961839,
+        "*fx": 32.65559295024633,
+        "fx": 308.474739421051
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg19",
+        "hcmr": 0.8929,
+        "par": 0.6179,
+        "alpha": 0.3497,
+        "error": 81.45707705363795,
+        "*fx": 32.65559295024633,
+        "fx": 1245.30228383749
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg19",
+        "w": 0.7224,
+        "c1": 1.9955,
+        "c2": 0.0612,
+        "f": 0.4366,
+        "cr": 0.5794,
+        "error": 0.5405243837231026,
+        "*fx": 32.65559295024633,
+        "fx": 71.45645443305716
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg20",
+        "mr": 0.5454,
+        "error": 84.78007061744563,
+        "*fx": 0.204979400285636,
+        "fx": 14.63127994731522
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg20",
+        "w": 0.3777,
+        "c1": 0.5723,
+        "c2": 1.8337,
+        "error": 58.227579623801,
+        "*fx": 0.204979400285636,
+        "fx": 7.258140963329913
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg20",
+        "f": -0.1958,
+        "cr": 0.2379,
+        "error": 4.675894956583555,
+        "*fx": 0.204979400285636,
+        "fx": 1.8191668242115848
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg20",
+        "hcmr": 0.8231,
+        "par": 0.3226,
+        "alpha": 0.9093,
+        "error": 52.660909528708956,
+        "*fx": 0.204979400285636,
+        "fx": 7.968512071846265
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg20",
+        "w": 0.804,
+        "c1": 0.4041,
+        "c2": 0.0623,
+        "f": 0.6737,
+        "cr": 0.4969,
+        "error": 0.027564311504183245,
+        "*fx": 0.204979400285636,
+        "fx": 0.19811713722101393
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg21",
+        "mr": 0.9291,
+        "error": 2.482254026226695,
+        "*fx": 193.72451007003497,
+        "fx": 917.4114288543499
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg21",
+        "w": 0.9747,
+        "c1": 1.3091,
+        "c2": 1.3171,
+        "error": 2.304911375306257,
+        "*fx": 193.72451007003497,
+        "fx": 161.87205442763963
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg21",
+        "f": -0.1541,
+        "cr": 0.9076,
+        "error": 2.7548105260481797,
+        "*fx": 193.72451007003497,
+        "fx": 625.1270218136054
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg21",
+        "hcmr": 0.1087,
+        "par": 0.255,
+        "alpha": 0.1678,
+        "error": 0.7848876397854055,
+        "*fx": 193.72451007003497,
+        "fx": 457.8530692920517
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg21",
+        "w": 0.9821,
+        "c1": 0.4428,
+        "c2": 0.3802,
+        "f": 0.6378,
+        "cr": 0.7677,
+        "error": 0.5822047688415768,
+        "*fx": 193.72451007003497,
+        "fx": 569.9206911018165
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg22",
+        "mr": 0.8884,
+        "error": 23.22277299257788,
+        "*fx": 236.43097550400105,
+        "fx": 5557.8595885149925
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg22",
+        "w": 0.0583,
+        "c1": 0.9256,
+        "c2": 0.0499,
+        "error": 21.71918897383399,
+        "*fx": 236.43097550400105,
+        "fx": 18264.729135384812
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg22",
+        "f": -0.0444,
+        "cr": 0.3703,
+        "error": 14.24920928153637,
+        "*fx": 236.43097550400105,
+        "fx": 11468.084041964023
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg22",
+        "hcmr": 0.1807,
+        "par": 0.6362,
+        "alpha": 0.504,
+        "error": 23.68074027879802,
+        "*fx": 236.43097550400105,
+        "fx": 9289.06981618734
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg22",
+        "w": 0.9666,
+        "c1": 0.4242,
+        "c2": 1.5148,
+        "f": 0.9465,
+        "cr": 0.8822,
+        "error": 67.62272310374776,
+        "*fx": 236.43097550400105,
+        "fx": 4178.8208222250905
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg23",
+        "mr": 0.6409,
+        "error": 7.674907915963703,
+        "*fx": -400.0550999999997,
+        "fx": 175.58920722766288
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg23",
+        "w": 0.1962,
+        "c1": 1.96,
+        "c2": 0.5912,
+        "error": 2.4727645129542175,
+        "*fx": -400.0550999999997,
+        "fx": 98.10093339139644
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg23",
+        "f": 0.7397,
+        "cr": 0.6886,
+        "error": 0.5139259784604998,
+        "*fx": -400.0550999999997,
+        "fx": -649.2871751455784
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg23",
+        "hcmr": 0.2898,
+        "par": 0.9021,
+        "alpha": 0.693,
+        "error": 1.3883226542799656,
+        "*fx": -400.0550999999997,
+        "fx": -199.74655877613804
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg23",
+        "w": 0.7001,
+        "c1": 1.7009,
+        "c2": 1.9722,
+        "f": 0.5439,
+        "cr": 0.5491,
+        "error": 0.6301230752477703,
+        "*fx": -400.0550999999997,
+        "fx": 38.565895015527076
+    },
+    {
+        "algorithm": "Artificial Bee Colony",
+        "problem_name": "pg24",
+        "mr": 0.4727,
+        "error": 0.8612522585167073,
+        "*fx": -5.50801327159536,
+        "fx": -4.122093213077454
+    },
+    {
+        "algorithm": "Particle Swarm Optimization",
+        "problem_name": "pg24",
+        "w": 0.5772,
+        "c1": 0.8888,
+        "c2": 1.9218,
+        "error": 5.65051510738257e-05,
+        "*fx": -5.50801327159536,
+        "fx": -5.5079881339615255
+    },
+    {
+        "algorithm": "Differential Evolution",
+        "problem_name": "pg24",
+        "f": -0.7532,
+        "cr": 0.4514,
+        "error": 0.040952048635897555,
+        "*fx": -5.50801327159536,
+        "fx": -5.1976992766742995
+    },
+    {
+        "algorithm": "Harmony Search",
+        "problem_name": "pg24",
+        "hcmr": 0.2378,
+        "par": 0.8625,
+        "alpha": -0.4256,
+        "error": 0.06277578790889861,
+        "*fx": -5.50801327159536,
+        "fx": -5.368169374045605
+    },
+    {
+        "algorithm": "Hybrid Modified PSO with Differential Evolution",
+        "problem_name": "pg24",
+        "w": 0.9816,
+        "c1": 1.5725,
+        "c2": 1.9348,
+        "f": 0.1885,
+        "cr": 0.2898,
+        "error": 2.6767839945221565e-14,
+        "*fx": -5.50801327159536,
+        "fx": -5.508013271595001
+    }
+]

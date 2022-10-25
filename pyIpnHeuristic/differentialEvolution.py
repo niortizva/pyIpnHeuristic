@@ -1,6 +1,7 @@
 from typing import List
 from . import PopulationBasedHeuristics
 from random import random, choice
+from copy import copy
 
 
 class DifferentialEvolution(PopulationBasedHeuristics):
@@ -169,7 +170,7 @@ class DifferentialEvolution(PopulationBasedHeuristics):
         # Step 2: Recombination
         recombination_matrix = self.recombination(mutation_matrix)
         # Step 3: Selection
-        self.population = self.selection(recombination_matrix)
+        self.population = copy(self.selection(recombination_matrix))
         
     def stop_condition(self) -> bool:
         return False

@@ -17,7 +17,7 @@ def test_differential_evolution():
         epsilon=10**-4,
     )
 
-    differential_evolution.search(iterations=100000, save_history=False)
+    differential_evolution.search(iterations=2, save_history=False)
 
     print(differential_evolution.population[-1])
     

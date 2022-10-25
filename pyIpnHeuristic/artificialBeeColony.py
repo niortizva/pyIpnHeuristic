@@ -1,6 +1,7 @@
 from typing import List
 from . import PopulationBasedHeuristics
 from random import random, choice, uniform
+from copy import copy
 
 
 class ArtificialBeeColony(PopulationBasedHeuristics):
@@ -99,7 +100,7 @@ class ArtificialBeeColony(PopulationBasedHeuristics):
         :return dict: New bee
         """
         if bee.get("trials", 0) >= self.max_trials:
-            scout_bee = self.evaluate_individual(self.new_vector_from_best(bee, best_bee))
+            scout_bee = self.new_vector_from_best(bee, best_bee)
             return {**scout_bee, "trials": 0}
         return bee
 
@@ -119,7 +120,7 @@ class ArtificialBeeColony(PopulationBasedHeuristics):
 
         # Scouts Phase
         best_bee = self.get_best(onlookers_population)
-        self.population = [self.scouts(bee, best_bee) for bee in self.population]
+        self.population = self.evaluate_population([self.scouts(bee, best_bee) for bee in self.population])
 
     def stop_condition(self) -> bool:
         return False

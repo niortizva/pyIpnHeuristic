@@ -1,5 +1,6 @@
 from . import PopulationBasedHeuristics
 from random import random, uniform
+from copy import copy
 
 
 class ParticleSwarmOptimization(PopulationBasedHeuristics):
@@ -44,18 +45,19 @@ class ParticleSwarmOptimization(PopulationBasedHeuristics):
         g = self.get_best(self.population)
 
         # Calculate new particle velocity
-        self.velocity = [self.compute_velocity(xi_best_value, xi, vi, g)
-                         for xi_best_value, xi, vi in zip(self.particles_best_values, self.population, self.velocity)]
+        self.velocity = copy([
+            self.compute_velocity(xi_best_value, xi, vi, g)
+            for xi_best_value, xi, vi in zip(self.particles_best_values, self.population, self.velocity)])
 
         # Calculate new particle position
-        self.population = self.evaluate_population([
+        self.population = copy(self.evaluate_population([
             self.fix_ranges({
                 "x": [xi["x"][j] + vi[j] for j in range(self.dimension)]
-            }) for xi, vi in zip(self.population, self.velocity)])
+            }) for xi, vi in zip(self.population, self.velocity)]))
 
         # Update particles best values
-        self.particles_best_values = [self.comparison(pi, xi)
-                                      for pi, xi in zip(self.particles_best_values, self.population)]
+        self.particles_best_values = copy([
+            self.comparison(pi, xi) for pi, xi in zip(self.particles_best_values, self.population)])
 
     def stop_condition(self) -> bool:
         return False

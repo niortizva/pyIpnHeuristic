@@ -3,6 +3,7 @@ from functools import reduce
 from typing import Callable, Any, List
 import random
 from .benchmark import *
+from copy import copy
 
 
 class PopulationBasedHeuristics(object):
@@ -163,6 +164,9 @@ class PopulationBasedHeuristics(object):
         :return list[dict]: Return evaluated population
         """
         return list(map(self.evaluate_individual, population))
+
+    def update_fes(self):
+        self.function_evaluations += 1
     
     def evaluate_individual(self, individual: dict) -> dict:
         """
@@ -170,6 +174,7 @@ class PopulationBasedHeuristics(object):
         :param dict individual: Individual
         :return dict: Evaluated Individual
         """
+        self.update_fes()
         individual["fx"] = self.objective_function(*individual["x"])
         individual["gx"] = sum([gi(*individual["x"]) * (gi(*individual["x"]) > 0)
                                for gi in self.soft_constrains])
@@ -180,7 +185,7 @@ class PopulationBasedHeuristics(object):
         else:
             individual["hx"] = sum([abs(hi(*individual["x"])) * (hi(*individual["x"]) != 0) 
                                     for hi in self.hard_constrains])
-        self.function_evaluations += 1
+        individual["fes"] = copy(self.function_evaluations)
             
         return individual
 
@@ -235,9 +240,8 @@ class PopulationBasedHeuristics(object):
         :param int iteration: Current iteration
         :return None:
         """
-        fx = [pi["fx"] for pi in self.population]
-        best_index = fx.index(min(fx))
-        self.history.append({**self.population[best_index], "iteration": iteration + 1,
+        best_individual = self.get_best(self.population)
+        self.history.append({**best_individual, "iteration": iteration + 1,
                              "fes": self.function_evaluations})
     
     def search(self, iterations: int = 100, save_history: bool = False):
@@ -249,7 +253,7 @@ class PopulationBasedHeuristics(object):
         """
         self.history = []
         initial_population = self.create_population()
-        self.population = self.evaluate_population(initial_population)
+        self.population = copy(self.evaluate_population(initial_population))
         for iteration in range(iterations):
             if self.stop_condition() or self.function_evaluations > self.max_function_evaluations:
                 break

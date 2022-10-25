@@ -17,7 +17,7 @@ def test_particle_swarm_optimization():
         epsilon=10 ** -4
     )
 
-    particle_swarm_optimization.search(iterations=100000, save_history=False)
+    particle_swarm_optimization.search(iterations=2, save_history=False)
 
     print(particle_swarm_optimization.population[-1])
 

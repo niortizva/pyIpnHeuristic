@@ -21,7 +21,7 @@ def test_hybrid_modified_pso_and_ed():
         epsilon=10 ** -4
     )
 
-    hybrid_modified_pso_and_ed.search(iterations=100000, save_history=False)
+    hybrid_modified_pso_and_ed.search(iterations=2, save_history=False)
 
     print(hybrid_modified_pso_and_ed.population[-1])
 
