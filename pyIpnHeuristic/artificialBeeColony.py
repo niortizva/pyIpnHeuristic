@@ -11,7 +11,7 @@ class ArtificialBeeColony(PopulationBasedHeuristics):
     def __init__(self, *args, **params):
         super().__init__(*args, **params)
         # Artificial Bee Colony parameters
-        self.max_trials = params.get("max_trials", 2)
+        self.max_trials = params.get("max_trials", 4)
         self.mr = params.get("mr", 0.6)
         self.index_list = [i for i in range(self.population_size)]
 
@@ -63,30 +63,45 @@ class ArtificialBeeColony(PopulationBasedHeuristics):
         New candidate solutions generation
         :return List[dict]: Returns new candidate solutions
         """
-        mutation_matrix: List[dict] = []
-        for i in range(self.population_size):
-            mutation_matrix.append(self.new_vector(self.population[i], i))
-        return self.evaluate_population(mutation_matrix)
+        return self.evaluate_population([self.new_vector(self.population[i], i)
+                                         for i in range(self.population_size)])
 
-    @staticmethod
-    def fit(x: dict) -> float:
+    def workers(self, worker_bee: dict, bee: dict) -> dict:
         """
-        Calculates food source fitness
-        :param dict x: Current food source
-        :return float: Food source fitness
+        Compares worker bee against current bee
+        :worker_bee dict: Created worker bee
+        :bee dict: Current bee
+        :return dict: New bee
         """
-        if x["fx"] >= 0:
-            return 1 / (1 + x["fx"])
+        if self.comparison(bee, worker_bee)["x"] != bee["x"]:
+            return {**worker_bee, "trials": 0}
         else:
-            return 1 + abs(x["fx"])
+            return {
+                **bee,
+                "trials": bee.get("trials", 0) + 1
+            }
 
-    def probability(self, mutation_matrix) -> List[float]:
+    def onlookers(self, bee: dict, best_bee: dict) -> dict:
         """
-        Calculates food source probability measure
-        :return List[float]: Probability matrix for each food source
+        Creates and compares onlooker bee against current bee
+        :bee dict: Current bee
+        :best_bee dict: Current best bee
+        :return dict: New bee
         """
-        fitness_matrix = [self.fit(x) for x in mutation_matrix]
-        return [fitness / sum(fitness_matrix) for fitness in fitness_matrix]
+        onlooker_bee = self.evaluate_individual(self.new_vector_from_best(bee, best_bee))
+        return self.workers(onlooker_bee, bee)
+
+    def scouts(self, bee: dict, best_bee: dict) -> dict:
+        """
+        Creates and compares scout bee against current bee
+        :bee dict: Current bee
+        :best_bee dict: Current best bee
+        :return dict: New bee
+        """
+        if bee.get("trials", 0) >= self.max_trials:
+            scout_bee = self.evaluate_individual(self.new_vector_from_best(bee, best_bee))
+            return {**scout_bee, "trials": 0}
+        return bee
 
     def population_enhancement(self) -> None:
         """
@@ -95,33 +110,16 @@ class ArtificialBeeColony(PopulationBasedHeuristics):
         """
         # Workers phase
         workers_mutation_matrix = self.mutation()
-        for i in range(self.population_size):
-            if self.comparison(self.population[i], workers_mutation_matrix[i])["x"] != self.population[i]["x"]:
-                self.population[i] = {**workers_mutation_matrix[i], "trials": 0}
-            else:
-                self.population[i] = {
-                    **self.population[i],
-                    "trials": self.population[i].get("trials", 0) + 1
-                }
+        workers_population = [self.workers(worker_bee, bee)
+                              for worker_bee, bee in zip(workers_mutation_matrix, self.population)]
 
         # Onlookers phase
-        for i in range(self.population_size):
-            best_x = self.get_best(self.population)
-            new_x = self.evaluate_individual(self.new_vector_from_best(self.population[i], best_x))
-            if self.comparison(self.population[i], new_x)["x"] != self.population[i]["x"]:
-                self.population[i] = {**new_x, "trials": 0}
-            else:
-                self.population[i] = {
-                    **self.population[i],
-                    "trials": self.population[i].get("trials", 0) + 1
-                }
+        best_bee = self.get_best(workers_population)
+        onlookers_population = [self.onlookers(bee, best_bee) for bee in workers_population]
 
         # Scouts Phase
-        for i in range(self.population_size):
-            if self.population[i].get("trials", 0) >= self.max_trials:
-                x_best = self.get_best(self.population)
-                new_x = self.evaluate_individual(self.new_vector_from_best(self.population[i], x_best))
-                self.population[i] = {**new_x, "trials": 0}
+        best_bee = self.get_best(onlookers_population)
+        self.population = [self.scouts(bee, best_bee) for bee in self.population]
 
     def stop_condition(self) -> bool:
         return False

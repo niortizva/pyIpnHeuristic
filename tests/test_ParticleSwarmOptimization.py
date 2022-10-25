@@ -11,9 +11,9 @@ def test_particle_swarm_optimization():
         hard_constrains=problem_parameters.get("hx"),
         ranges=problem_parameters.get("ranges"),
         population_size=10,
-        w=0.3,
-        c1=0.1,
-        c2=1.9,
+        w=0.15,
+        c1=0.2,
+        c2=1.5,
         epsilon=10 ** -4
     )
 

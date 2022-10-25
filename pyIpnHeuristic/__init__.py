@@ -1,4 +1,5 @@
 from abc import abstractmethod
+from functools import reduce
 from typing import Callable, Any, List
 import random
 from .benchmark import *
@@ -68,6 +69,9 @@ class PopulationBasedHeuristics(object):
         self.history: List[dict] = []
         self.smooth: bool = smooth
         self.epsilon: float = epsilon
+        self.custom_population: list = []
+        self.function_evaluations: int = 0
+        self.max_function_evaluations: int = params.get("max_fes", 10**10)
         
         # Check if population has enough size
         if self.population_size <= 0:
@@ -75,6 +79,14 @@ class PopulationBasedHeuristics(object):
             Population size is not valid. Population size
             must be greater than 0
             """)
+
+    def set_custom_population(self, custom_population: list) -> None:
+        """
+        Sets custom initial population
+        :custom_population list: Custom initial population
+        :return None:
+        """
+        self.custom_population = custom_population
         
     def create_individual(self) -> dict:
         """
@@ -116,8 +128,11 @@ class PopulationBasedHeuristics(object):
             { "x": [0.05, 0.02], fx: None, gx: None, hx: None },
             { "x": [0.85, 0.72], fx: None, gx: None, hx: None }
         ]
+        :custom_population list: Custom population
         :return list[dict]: Random population
         """
+        if self.custom_population:
+            return self.custom_population
         return [
             self.create_individual()
             for _ in range(self.population_size)
@@ -147,10 +162,7 @@ class PopulationBasedHeuristics(object):
         ]
         :return list[dict]: Return evaluated population
         """
-        return [
-            self.evaluate_individual(x)
-            for x in population
-        ]
+        return list(map(self.evaluate_individual, population))
     
     def evaluate_individual(self, individual: dict) -> dict:
         """
@@ -168,20 +180,20 @@ class PopulationBasedHeuristics(object):
         else:
             individual["hx"] = sum([abs(hi(*individual["x"])) * (hi(*individual["x"]) != 0) 
                                     for hi in self.hard_constrains])
+        self.function_evaluations += 1
             
         return individual
 
-    def get_best(self, population: List[dict]) -> dict:
+    def get_best(self, population: List[dict], exclude_list: list = []) -> dict:
         """
         Gets the best individual for a given population using DEB conditions
+        :population List[dict]: Population list
+        :exclude_list list: List of excluded indexes
         :return dict: Best individual
         """
-        best_index = 0
-        pop = [{**population[j], "index": j} for j in range(len(population))]
-        for i in range(1, len(population)):
-            best = self.comparison(pop[best_index], pop[i])
-            best_index = best["index"]
-        return pop[best_index]
+        pop = [{**population[j], "index": j} for j in range(len(population))
+               if j not in exclude_list]
+        return reduce(self.comparison, pop)
     
     @staticmethod
     def comparison(xi: dict, xj: dict) -> dict:
@@ -225,7 +237,8 @@ class PopulationBasedHeuristics(object):
         """
         fx = [pi["fx"] for pi in self.population]
         best_index = fx.index(min(fx))
-        self.history.append({**self.population[best_index], "iteration": iteration + 1})
+        self.history.append({**self.population[best_index], "iteration": iteration + 1,
+                             "fes": self.function_evaluations})
     
     def search(self, iterations: int = 100, save_history: bool = False):
         """
@@ -238,7 +251,7 @@ class PopulationBasedHeuristics(object):
         initial_population = self.create_population()
         self.population = self.evaluate_population(initial_population)
         for iteration in range(iterations):
-            if self.stop_condition():
+            if self.stop_condition() or self.function_evaluations > self.max_function_evaluations:
                 break
             self.population_enhancement()
             if save_history:

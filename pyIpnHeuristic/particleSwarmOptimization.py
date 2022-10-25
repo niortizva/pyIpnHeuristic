@@ -17,6 +17,19 @@ class ParticleSwarmOptimization(PopulationBasedHeuristics):
         self.velocity = []
         self.particles_best_values = []
 
+    def compute_velocity(self, xi_best_value: dict, xi: dict, vi: list, g: dict) -> list:
+        """
+        Computes new velocity
+        :xi_best_value dict: Best particle value
+        :xi dict: Current particle
+        :vi list: Current particle velocity
+        :g dict: Current best particle
+        :return list: new velocity
+        """
+        return [self.w * vi[j] +
+                self.c1 * random() * (xi_best_value["x"][j] - xi["x"][j]) +
+                self.c2 * random() * (g["x"][j] - xi["x"][j]) for j in range(self.dimension)]
+
     def population_enhancement(self) -> None:
         """
         Population Enhancement Method
@@ -31,24 +44,18 @@ class ParticleSwarmOptimization(PopulationBasedHeuristics):
         g = self.get_best(self.population)
 
         # Calculate new particle velocity
-        self.velocity = [
-            [self.w * self.velocity[i][j] +
-             self.c1 * random() * (self.particles_best_values[i]["x"][j] - self.population[i]["x"][j]) +
-             self.c2 * random() * (g["x"][j] - self.population[i]["x"][j])
-             for j in range(self.dimension)]
-            for i in range(self.population_size)]
+        self.velocity = [self.compute_velocity(xi_best_value, xi, vi, g)
+                         for xi_best_value, xi, vi in zip(self.particles_best_values, self.population, self.velocity)]
 
         # Calculate new particle position
-        new_particles = self.evaluate_population([
+        self.population = self.evaluate_population([
             self.fix_ranges({
-                "x": [self.population[i]["x"][j] + self.velocity[i][j] for j in range(self.dimension)]
-            }) for i in range(self.population_size)])
-
-        self.population = new_particles
+                "x": [xi["x"][j] + vi[j] for j in range(self.dimension)]
+            }) for xi, vi in zip(self.population, self.velocity)])
 
         # Update particles best values
-        self.particles_best_values = [self.comparison(self.particles_best_values[i], new_particles[i])
-                                      for i in range(self.population_size)]
+        self.particles_best_values = [self.comparison(pi, xi)
+                                      for pi, xi in zip(self.particles_best_values, self.population)]
 
     def stop_condition(self) -> bool:
         return False

@@ -11,7 +11,7 @@ def test_artificial_bee_colony():
         hard_constrains=problem_parameters.get("hx"),
         ranges=problem_parameters.get("ranges"),
         population_size=5,
-        mr=0.3,
+        mr=0.2,
         max_trials=3,
         epsilon=10 ** -4,
     )
