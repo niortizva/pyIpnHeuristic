@@ -1,0 +1,648 @@
+\documentclass[10pt, a4paper]{book}
+
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{geometry}
+\geometry{
+    total={170mm,257mm},
+    left=20mm,
+    top=20mm,
+}
+
+\title{
+    Heuristic Algorithms \\
+    \large Achieved Results for Differential Evolution\\
+}
+\author{Nicolás Ortiz Valencia}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 7.3844 & 1.5323 & 1.5323 \\
+Median & 42.2771 & 47.0339 & 47.7737 \\
+Worst & 37.3844 & 24.5235 & 24.5235 \\
+$v$ & 5577.5174 & 12105.4310 & 18027.8689 \\
+Mean & 44.2701 & 48.5269 & 48.0500 \\
+std & 19.3402 & 23.6464 & 22.7917 \\
+\caption{ Error Values Problem pg01 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.1752 & 0.0438 & 0.0438 \\
+Median & 0.6620 & 0.6554 & 0.6554 \\
+Worst & 0.9237 & 0.9237 & 0.9237 \\
+$v$ & 0.0000 & 0.0000 & 0.0000 \\
+Mean & 0.6420 & 0.6362 & 0.6385 \\
+std & 0.0895 & 0.1008 & 0.0936 \\
+\caption{ Error Values Problem pg02 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 1.0003 & 0.9978 & 0.9978 \\
+Median & 0.9745 & 0.9590 & 0.9445 \\
+Worst & 1.0007 & 1.0007 & 1.0007 \\
+$v$ & 25.4136 & 51.8037 & 82.7448 \\
+Mean & 3.2944 & 2.8089 & 2.6131 \\
+std & 6.4010 & 5.9951 & 5.3792 \\
+\caption{ Error Values Problem pg03 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 811.3856 & 728.3927 & 577.8440 \\
+Median & 2894.4094 & 2957.5855 & 2876.5112 \\
+Worst & 55117.3428 & 55117.3428 & 55117.3428 \\
+$v$ & 0.8197 & 1.3914 & 2.0859 \\
+Mean & 2963.7607 & 2862.6765 & 2823.0601 \\
+std & 1412.2750 & 1258.6293 & 1367.5077 \\
+\caption{ Error Values Problem pg04 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 992.2012 & 356.4336 & 553.2420 \\
+Median & 1952.4004 & 1893.7007 & 1848.4052 \\
+Worst & 12170.3422 & 12884.5126 & 13364.3995 \\
+$v$ & 16037.6991 & 30298.0392 & 44988.8562 \\
+Mean & 2122.3808 & 1942.4414 & 1916.9435 \\
+std & 1475.4649 & 1311.5200 & 1281.1334 \\
+\caption{ Error Values Problem pg05 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 4930.1321 & 4930.1321 & 4681.4106 \\
+Median & 17811.3333 & 19862.7616 & 21589.5328 \\
+Worst & 250302.3458 & 250302.3458 & 317406.5835 \\
+$v$ & 45825.8987 & 93016.8791 & 146715.7920 \\
+Mean & 50688.2317 & 47348.4786 & 49449.6065 \\
+std & 70032.5089 & 59790.1021 & 63227.4147 \\
+\caption{ Error Values Problem pg06 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 1.1813 & 0.0940 & 0.0033 \\
+Median & 1598.7256 & 1598.7256 & 1602.3777 \\
+Worst & 3637.9277 & 3796.2494 & 3796.2494 \\
+$v$ & 12129.8008 & 24218.1350 & 36022.3435 \\
+Mean & 1713.9945 & 1706.5250 & 1688.3023 \\
+std & 1065.8146 & 1030.9561 & 999.9720 \\
+\caption{ Error Values Problem pg07 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.0667 & 0.0240 & 0.0240 \\
+Median & 0.0957 & 0.0958 & 0.0959 \\
+Worst & 0.3080 & 0.3080 & 9.9636 \\
+$v$ & 239.5326 & 408.1552 & 667.6615 \\
+Mean & 0.8665 & 0.6896 & 1.0696 \\
+std & 4.0159 & 3.1642 & 5.0929 \\
+\caption{ Error Values Problem pg08 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 756.3859 & 5.5099 & 5.5099 \\
+Median & 88139.6178 & 191715.2827 & 191715.2827 \\
+Worst & 8951321.6278 & 8951321.6278 & 9857967.1608 \\
+$v$ & 6674.5181 & 14707.0551 & 22340.8408 \\
+Mean & 1375285.8886 & 1393523.5467 & 1809201.2601 \\
+std & 2667918.2708 & 2400102.1284 & 2847475.7549 \\
+\caption{ Error Values Problem pg09 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 13447.5686 & 13447.5686 & 13447.5686 \\
+Median & 9087.5135 & 8869.9390 & 8869.9390 \\
+Worst & 28737.2542 & 34552.1996 & 34552.1996 \\
+$v$ & 203167.5128 & 395324.1053 & 787478.7456 \\
+Mean & 8508.9726 & 9157.3919 & 8952.2725 \\
+std & 4072.8683 & 4275.2339 & 4381.2137 \\
+\caption{ Error Values Problem pg10 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.0980 & 0.0980 & 0.0069 \\
+Median & 0.2124 & 0.1172 & 0.1373 \\
+Worst & 2.6042 & 2.6042 & 2.7061 \\
+$v$ & 4.8771 & 7.6871 & 11.2768 \\
+Mean & 0.2975 & 0.2348 & 0.2415 \\
+std & 0.3024 & 0.2584 & 0.2709 \\
+\caption{ Error Values Problem pg11 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.0642 & 0.0000 & 0.0000 \\
+Median & 0.2022 & 0.2052 & 0.1967 \\
+Worst & 1.6196 & 1.5568 & 1.5568 \\
+$v$ & 2.3682 & 3.7967 & 5.3630 \\
+Mean & 0.2027 & 0.2071 & 0.1989 \\
+std & 0.0874 & 0.0929 & 0.0939 \\
+\caption{ Error Values Problem pg12 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.6541 & 0.6541 & 0.6541 \\
+Median & 0.8881 & 0.9456 & 0.9491 \\
+Worst & 224.7562 & 224.7562 & 224.7562 \\
+$v$ & 80.1402 & 167.3510 & 240.8906 \\
+Mean & 9.1400 & 5.2493 & 4.5070 \\
+std & 40.8520 & 28.9358 & 24.2569 \\
+\caption{ Error Values Problem pg13 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 5.7593 & 8.4140 & 1.7891 \\
+Median & 665.8064 & 652.5063 & 651.9946 \\
+Worst & 101.2891 & 87.1158 & 87.1158 \\
+$v$ & 562.5816 & 1107.2851 & 1653.0307 \\
+Mean & 632.8119 & 627.5299 & 626.3013 \\
+std & 192.3035 & 187.0460 & 174.6765 \\
+\caption{ Error Values Problem pg14 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 3.9184 & 3.9184 & 4.4535 \\
+Median & 24.3534 & 21.8871 & 19.7296 \\
+Worst & 1952.3922 & 1952.3922 & 1952.3922 \\
+$v$ & 777.2505 & 1523.4551 & 2138.0646 \\
+Mean & 36.4240 & 34.1606 & 31.6453 \\
+std & 40.2304 & 37.1709 & 33.8361 \\
+\caption{ Error Values Problem pg15 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.5226 & 0.4472 & 0.4472 \\
+Median & 1.0054 & 0.7568 & 0.8021 \\
+Worst & 1.7707 & 4.4222 & 4.4222 \\
+$v$ & 119423.7158 & 185205.5503 & 321256.3808 \\
+Mean & 1.2792 & 1.2198 & 1.1772 \\
+std & 1.2836 & 1.4139 & 1.2510 \\
+\caption{ Error Values Problem pg16 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 85.0303 & 108.1694 & 108.1694 \\
+Median & 5445.8984 & 6036.8859 & 5044.4083 \\
+Worst & 35013.0030 & 43416.4431 & 43416.4431 \\
+$v$ & 6096.6954 & 12951.9881 & 19125.0402 \\
+Mean & 6526.8594 & 6901.8852 & 6345.0290 \\
+std & 4521.9701 & 5477.6167 & 5507.3262 \\
+\caption{ Error Values Problem pg17 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 2.3129 & 0.6043 & 0.8385 \\
+Median & 17.0046 & 14.2955 & 14.5390 \\
+Worst & 34.5138 & 34.5138 & 90.7842 \\
+$v$ & 16171.3625 & 31335.7745 & 47628.3319 \\
+Mean & 18.6011 & 16.0306 & 18.0485 \\
+std & 13.6523 & 13.0726 & 16.4610 \\
+\caption{ Error Values Problem pg18 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 202.3033 & 42.7202 & 42.7202 \\
+Median & 6948.5697 & 7089.4039 & 7194.5475 \\
+Worst & 17423.5587 & 17423.5587 & 17423.5587 \\
+$v$ & 0.0000 & 0.0000 & 0.0000 \\
+Mean & 7467.5982 & 7638.3957 & 7487.6907 \\
+std & 3684.7548 & 3829.6213 & 3774.3532 \\
+\caption{ Error Values Problem pg19 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 4.6745 & 4.5016 & 4.5016 \\
+Median & 15.0027 & 14.3308 & 14.3783 \\
+Worst & 19.9606 & 19.9606 & 20.8080 \\
+$v$ & 365.5137 & 722.6425 & 1084.5100 \\
+Mean & 14.3831 & 14.2653 & 14.2911 \\
+std & 3.0166 & 2.9751 & 3.0786 \\
+\caption{ Error Values Problem pg20 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 716.4659 & 716.4659 & 494.3108 \\
+Median & 438.9633 & 425.1747 & 405.6938 \\
+Worst & 1171.5296 & 1171.5296 & 1192.1998 \\
+$v$ & 6657.4882 & 10865.2053 & 16365.3282 \\
+Mean & 407.5229 & 399.3765 & 390.0251 \\
+std & 251.2414 & 244.7646 & 246.2551 \\
+\caption{ Error Values Problem pg21 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 7498.3288 & 4517.6872 & 4517.6872 \\
+Median & 7308.4738 & 8707.2777 & 8153.9231 \\
+Worst & 20089.4555 & 20089.4555 & 20089.4555 \\
+$v$ & 7763902663.6219 & 15438439357.7070 & 24475852618.9137 \\
+Mean & 8384.5196 & 9172.2321 & 8663.7995 \\
+std & 6330.4517 & 5890.1768 & 5727.1958 \\
+\caption{ Error Values Problem pg22 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 125.8105 & 125.8105 & 125.8105 \\
+Median & 1264.5738 & 1343.9044 & 1360.7466 \\
+Worst & 2577.9264 & 2832.8742 & 3164.8794 \\
+$v$ & 1280.9020 & 2711.6006 & 3985.3624 \\
+Mean & 1363.3071 & 1498.7053 & 1511.0285 \\
+std & 973.5534 & 1023.8601 & 1033.6407 \\
+\caption{ Error Values Problem pg23 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.8262 & 0.0582 & 0.0199 \\
+Median & 2.1056 & 1.9643 & 1.9061 \\
+Worst & 7.1774 & 7.1744 & 6.2868 \\
+$v$ & 0.0205 & 0.0205 & 0.4549 \\
+Mean & 2.1241 & 1.9946 & 1.9642 \\
+std & 0.8852 & 0.8153 & 0.9027 \\
+\caption{ Error Values Problem pg24 using Differential Evolution }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg01 & 7.3844 & 42.2771 & 37.3844 & 44.2701 & 19.3402 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg01 & 1.0328 & 47.0339 & 24.5235 & 48.5269 & 23.6464 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg01 & 1.0328 & 47.7737 & 24.5235 & 48.0500 & 22.7917 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg02 & 0.1752 & 0.6620 & 0.9237 & 0.6420 & 0.0895 & 1.0000 & 0.0000 & -1.0000 \\
+50000 & pg02 & 0.0438 & 0.6554 & 0.9237 & 0.6362 & 0.1008 & 1.0000 & 0.0000 & -1.0000 \\
+500000 & pg02 & 0.0438 & 0.6554 & 0.9237 & 0.6385 & 0.0936 & 1.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg03 & 0.3549 & 0.9745 & 1.0007 & 3.2944 & 6.4010 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg03 & 0.0784 & 0.9590 & 1.0007 & 2.8089 & 5.9951 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg03 & 0.0020 & 0.9445 & 1.0007 & 2.6131 & 5.3792 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg04 & 811.3856 & 2894.4094 & 55117.3428 & 2963.7607 & 1412.2750 & 0.9333 & 0.0000 & -1.0000 \\
+50000 & pg04 & 728.3927 & 2957.5855 & 55117.3428 & 2862.6765 & 1258.6293 & 0.9333 & 0.0000 & -1.0000 \\
+500000 & pg04 & 577.8440 & 2876.5112 & 55117.3428 & 2823.0601 & 1367.5077 & 0.9000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg05 & 58.2151 & 1952.4004 & 12170.3422 & 2122.3808 & 1475.4649 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg05 & 58.2151 & 1893.7007 & 12884.5126 & 1942.4414 & 1311.5200 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg05 & 58.2151 & 1848.4052 & 13364.3995 & 1916.9435 & 1281.1334 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg06 & 2055.8073 & 17811.3333 & 250302.3458 & 50688.2317 & 70032.5089 & 0.0333 & 0.0000 & -1.0000 \\
+50000 & pg06 & 2055.8073 & 19862.7616 & 250302.3458 & 47348.4786 & 59790.1021 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg06 & 95.5784 & 21589.5328 & 317406.5835 & 49449.6065 & 63227.4147 & 0.0333 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg07 & 1.1813 & 1598.7256 & 3637.9277 & 1713.9945 & 1065.8146 & 0.0333 & 0.0000 & -1.0000 \\
+50000 & pg07 & 0.0940 & 1598.7256 & 3796.2494 & 1706.5250 & 1030.9561 & 0.0333 & 0.0000 & -1.0000 \\
+500000 & pg07 & 0.0033 & 1602.3777 & 3796.2494 & 1688.3023 & 999.9720 & 0.0333 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg08 & 0.0661 & 0.0957 & 0.3080 & 0.8665 & 4.0159 & 0.0667 & 0.0000 & -1.0000 \\
+50000 & pg08 & 0.0240 & 0.0958 & 0.3080 & 0.6896 & 3.1642 & 0.1333 & 0.0000 & -1.0000 \\
+500000 & pg08 & 0.0104 & 0.0959 & 9.9636 & 1.0696 & 5.0929 & 0.0667 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg09 & 756.3859 & 88139.6178 & 8951321.6278 & 1375285.8886 & 2667918.2708 & 0.1000 & 0.0000 & -1.0000 \\
+50000 & pg09 & 5.5099 & 191715.2827 & 8951321.6278 & 1393523.5467 & 2400102.1284 & 0.1333 & 0.0000 & -1.0000 \\
+500000 & pg09 & 5.5099 & 191715.2827 & 9857967.1608 & 1809201.2601 & 2847475.7549 & 0.1000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg10 & 250.6386 & 9087.5135 & 28737.2542 & 8508.9726 & 4072.8683 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg10 & 250.6386 & 8869.9390 & 34552.1996 & 9157.3919 & 4275.2339 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg10 & 158.1048 & 8869.9390 & 34552.1996 & 8952.2725 & 4381.2137 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg11 & 0.0025 & 0.2124 & 2.6042 & 0.2975 & 0.3024 & 0.0333 & 0.0000 & -1.0000 \\
+50000 & pg11 & 0.0025 & 0.1172 & 2.6042 & 0.2348 & 0.2584 & 0.0333 & 0.0000 & -1.0000 \\
+500000 & pg11 & 0.0025 & 0.1373 & 2.7061 & 0.2415 & 0.2709 & 0.0667 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg12 & 0.0642 & 0.2022 & 1.6196 & 0.2027 & 0.0874 & 0.1667 & 0.0000 & -1.0000 \\
+50000 & pg12 & 0.0000 & 0.2052 & 1.5568 & 0.2071 & 0.0929 & 0.3000 & 0.0333 & 1455848.0000 \\
+500000 & pg12 & 0.0000 & 0.1967 & 1.5568 & 0.1989 & 0.0939 & 0.4333 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg13 & 0.0309 & 0.8881 & 224.7562 & 9.1400 & 40.8520 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg13 & 0.0095 & 0.9456 & 224.7562 & 5.2493 & 28.9358 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg13 & 0.0095 & 0.9491 & 224.7562 & 4.5070 & 24.2569 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg14 & 5.7593 & 665.8064 & 101.2891 & 632.8119 & 192.3035 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg14 & 5.7593 & 652.5063 & 87.1158 & 627.5299 & 187.0460 & 0.0333 & 0.0000 & -1.0000 \\
+500000 & pg14 & 1.7891 & 651.9946 & 87.1158 & 626.3013 & 174.6765 & 0.0333 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg15 & 0.2534 & 24.3534 & 1952.3922 & 36.4240 & 40.2304 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg15 & 0.2534 & 21.8871 & 1952.3922 & 34.1606 & 37.1709 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg15 & 0.1739 & 19.7296 & 1952.3922 & 31.6453 & 33.8361 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg16 & 0.2596 & 1.0054 & 1.7707 & 1.2792 & 1.2836 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg16 & 0.0038 & 0.7568 & 4.4222 & 1.2198 & 1.4139 & 0.0333 & 0.0000 & -1.0000 \\
+500000 & pg16 & 0.0038 & 0.8021 & 4.4222 & 1.1772 & 1.2510 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg17 & 85.0303 & 5445.8984 & 35013.0030 & 6526.8594 & 4521.9701 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg17 & 85.0303 & 6036.8859 & 43416.4431 & 6901.8852 & 5477.6167 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg17 & 44.2937 & 5044.4083 & 43416.4431 & 6345.0290 & 5507.3262 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg18 & 0.0642 & 17.0046 & 34.5138 & 18.6011 & 13.6523 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg18 & 0.0642 & 14.2955 & 34.5138 & 16.0306 & 13.0726 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg18 & 0.0642 & 14.5390 & 90.7842 & 18.0485 & 16.4610 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg19 & 202.3033 & 6948.5697 & 17423.5587 & 7467.5982 & 3684.7548 & 1.0000 & 0.0000 & -1.0000 \\
+50000 & pg19 & 42.7202 & 7089.4039 & 17423.5587 & 7638.3957 & 3829.6213 & 1.0000 & 0.0000 & -1.0000 \\
+500000 & pg19 & 42.7202 & 7194.5475 & 17423.5587 & 7487.6907 & 3774.3532 & 1.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg20 & 4.6745 & 15.0027 & 19.9606 & 14.3831 & 3.0166 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg20 & 4.5016 & 14.3308 & 19.9606 & 14.2653 & 2.9751 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg20 & 2.8388 & 14.3783 & 20.8080 & 14.2911 & 3.0786 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg21 & 1.7504 & 438.9633 & 1171.5296 & 407.5229 & 251.2414 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg21 & 1.7504 & 425.1747 & 1171.5296 & 399.3765 & 244.7646 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg21 & 1.7504 & 405.6938 & 1192.1998 & 390.0251 & 246.2551 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg22 & 127.6702 & 7308.4738 & 20089.4555 & 8384.5196 & 6330.4517 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg22 & 127.6702 & 8707.2777 & 20089.4555 & 9172.2321 & 5890.1768 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg22 & 116.7558 & 8153.9231 & 20089.4555 & 8663.7995 & 5727.1958 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg23 & 0.9881 & 1264.5738 & 2577.9264 & 1363.3071 & 973.5534 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg23 & 0.9881 & 1343.9044 & 2832.8742 & 1498.7053 & 1023.8601 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg23 & 0.9881 & 1360.7466 & 3164.8794 & 1511.0285 & 1033.6407 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg24 & 0.1836 & 2.1056 & 7.1774 & 2.1241 & 0.8852 & 0.9667 & 0.0000 & -1.0000 \\
+50000 & pg24 & 0.0582 & 1.9643 & 7.1744 & 1.9946 & 0.8153 & 1.0000 & 0.0000 & -1.0000 \\
+500000 & pg24 & 0.0199 & 1.9061 & 6.2868 & 1.9642 & 0.9027 & 0.9667 & 0.0000 & -1.0000 \\
+
+\caption{ Differential Evolution. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+
+\end{document}

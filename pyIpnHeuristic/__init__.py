@@ -119,7 +119,7 @@ class PopulationBasedHeuristics(object):
         return individual
         
     def create_population(self) -> List[dict]:
-        """
+        r"""
         Creates population randomly
         
         e.g.,
@@ -140,7 +140,7 @@ class PopulationBasedHeuristics(object):
         ]
     
     def evaluate_population(self, population: List[dict]) -> List[dict]:
-        """
+        r"""
         Evaluates objective function and constrains for a given population
         
         e.g.,
@@ -255,11 +255,13 @@ class PopulationBasedHeuristics(object):
         initial_population = self.create_population()
         self.population = copy(self.evaluate_population(initial_population))
         for iteration in range(iterations):
-            if self.stop_condition() or self.function_evaluations > self.max_function_evaluations:
+            if self.stop_condition():
                 break
             self.population_enhancement()
             if save_history:
                 self.save_history(iteration)
+            if self.function_evaluations > self.max_function_evaluations:
+                break
 
 
 if __name__ == "__main__":

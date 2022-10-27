@@ -1,0 +1,648 @@
+\documentclass[10pt, a4paper]{book}
+
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{geometry}
+\geometry{
+    total={170mm,257mm},
+    left=20mm,
+    top=20mm,
+}
+
+\title{
+    Heuristic Algorithms \\
+    \large Achieved Results for Harmony Search\\
+}
+\author{Nicolás Ortiz Valencia}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 7.4628 & 6.7555 & 6.2138 \\
+Median & 49.6056 & 55.4842 & 51.1064 \\
+Worst & 37.4628 & 23.2445 & 21.3173 \\
+$v$ & 6453.2818 & 13577.3599 & 18626.0746 \\
+Mean & 51.4905 & 54.5777 & 50.2408 \\
+std & 25.8178 & 23.0401 & 25.4078 \\
+\caption{ Error Values Problem pg01 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.3526 & 0.3526 & 0.2877 \\
+Median & 0.6563 & 0.6586 & 0.6589 \\
+Worst & 0.9285 & 0.9248 & 0.9221 \\
+$v$ & 0.0000 & 0.0000 & 0.0000 \\
+Mean & 0.6455 & 0.6474 & 0.6334 \\
+std & 0.0577 & 0.0578 & 0.0882 \\
+\caption{ Error Values Problem pg02 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.9805 & 0.9984 & 1.0003 \\
+Median & 0.9352 & 0.9153 & 0.9379 \\
+Worst & 1.0006 & 1.0006 & 1.0005 \\
+$v$ & 24.0401 & 49.6325 & 71.1728 \\
+Mean & 1.0251 & 1.3136 & 1.2545 \\
+std & 0.8199 & 2.5030 & 2.1269 \\
+\caption{ Error Values Problem pg03 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 462.9099 & 284.1233 & 74.1870 \\
+Median & 3120.3808 & 3120.3808 & 2469.1898 \\
+Worst & 55417.6156 & 55417.6156 & 54384.2732 \\
+$v$ & 0.9313 & 3.7842 & 6.4357 \\
+Mean & 3269.6959 & 3118.8102 & 2836.7263 \\
+std & 1301.7405 & 1318.4355 & 1467.0824 \\
+\caption{ Error Values Problem pg04 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 101.1785 & 1195.1433 & 413.7731 \\
+Median & 1626.2138 & 1712.4386 & 1601.2256 \\
+Worst & 12479.4859 & 12479.4859 & 12756.5802 \\
+$v$ & 15287.5418 & 30294.2487 & 44694.8435 \\
+Mean & 1827.5098 & 1919.6871 & 1810.0506 \\
+std & 1052.5422 & 1133.1754 & 1147.1473 \\
+\caption{ Error Values Problem pg05 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 3871.7652 & 24.4819 & 4.2895 \\
+Median & 25913.5705 & 29272.2483 & 25939.5762 \\
+Worst & 291442.6419 & 307229.3343 & 542439.3968 \\
+$v$ & 44230.1429 & 96623.7415 & 150782.3817 \\
+Mean & 46510.0841 & 49175.9752 & 56617.1840 \\
+std & 69045.8472 & 65271.4250 & 89665.6351 \\
+\caption{ Error Values Problem pg06 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 59.5054 & 147.2485 & 147.2485 \\
+Median & 1748.3955 & 1797.0230 & 1675.3482 \\
+Worst & 3660.7980 & 3660.7980 & 3660.7980 \\
+$v$ & 15753.2490 & 30447.7560 & 42486.9305 \\
+Mean & 1741.8412 & 1773.7563 & 1649.0710 \\
+std & 916.9713 & 897.7698 & 983.3748 \\
+\caption{ Error Values Problem pg07 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.0024 & 0.0005 & 0.0000 \\
+Median & 0.0958 & 0.0960 & 0.0958 \\
+Worst & 43.3347 & 43.3347 & 43.3347 \\
+$v$ & 239.7099 & 407.0192 & 564.1252 \\
+Mean & 3.6318 & 3.2168 & 5.0206 \\
+std & 13.6756 & 11.0337 & 25.6233 \\
+\caption{ Error Values Problem pg08 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 1.9500 & 1.9279 & 0.9388 \\
+Median & 115970.9295 & 149701.5300 & 96061.7546 \\
+Worst & 8549372.8320 & 9426896.7127 & 9426896.7127 \\
+$v$ & 14051.2646 & 24308.7651 & 33714.1883 \\
+Mean & 1324540.1983 & 1142555.7329 & 926263.4281 \\
+std & 2332727.3396 & 2100298.2598 & 1863969.2344 \\
+\caption{ Error Values Problem pg09 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 2335.0158 & 7675.6317 & 7402.0667 \\
+Median & 9361.8983 & 9096.3359 & 8702.0004 \\
+Worst & 33802.1668 & 33802.1668 & 33802.1668 \\
+$v$ & 573035.0426 & 839670.6790 & 2871108.4605 \\
+Mean & 9507.4273 & 9212.6608 & 8909.3346 \\
+std & 5391.3719 & 4703.0339 & 4405.6902 \\
+\caption{ Error Values Problem pg10 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.0266 & 0.1185 & 0.0002 \\
+Median & 0.1784 & 0.1975 & 0.1909 \\
+Worst & 2.6167 & 3.2193 & 3.2193 \\
+$v$ & 5.3226 & 11.6417 & 16.8146 \\
+Mean & 0.2393 & 0.3178 & 0.2976 \\
+std & 0.2420 & 0.3466 & 0.3215 \\
+\caption{ Error Values Problem pg11 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.0059 & 0.0000 & 0.0000 \\
+Median & 0.1800 & 0.1738 & 0.1701 \\
+Worst & 1.4780 & 1.4780 & 1.4780 \\
+$v$ & 1.3439 & 3.0588 & 4.8842 \\
+Mean & 0.1873 & 0.1800 & 0.1757 \\
+std & 0.1316 & 0.1099 & 0.1152 \\
+\caption{ Error Values Problem pg12 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.2697 & 0.9193 & 0.9024 \\
+Median & 0.9201 & 0.9297 & 0.9544 \\
+Worst & 21.6533 & 3761.8884 & 3761.8884 \\
+$v$ & 82.9258 & 159.9628 & 234.3295 \\
+Mean & 1.7627 & 64.8564 & 43.8112 \\
+std & 3.8828 & 485.4003 & 396.3454 \\
+\caption{ Error Values Problem pg13 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 186.0244 & 186.0244 & 218.1271 \\
+Median & 640.7399 & 670.7961 & 669.4217 \\
+Worst & 281.5542 & 281.5542 & 281.5542 \\
+$v$ & 549.3654 & 1148.6564 & 1680.6380 \\
+Mean & 625.3396 & 656.1622 & 642.2004 \\
+std & 133.3014 & 139.5427 & 160.6654 \\
+\caption{ Error Values Problem pg14 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 5.1435 & 1.3050 & 2.6431 \\
+Median & 30.0614 & 30.0614 & 28.9898 \\
+Worst & 1952.7367 & 1952.7367 & 1955.7352 \\
+$v$ & 982.3995 & 1906.0042 & 2738.0684 \\
+Mean & 46.0877 & 44.7792 & 43.4297 \\
+std & 46.2527 & 40.6379 & 41.1349 \\
+\caption{ Error Values Problem pg15 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.5988 & 0.4017 & 0.3119 \\
+Median & 0.9540 & 0.9647 & 0.9156 \\
+Worst & 5.9643 & 17.6472 & 21.5659 \\
+$v$ & 282541.0824 & 448009.2909 & 618036.2765 \\
+Mean & 1.3328 & 1.6309 & 1.7188 \\
+std & 1.8176 & 3.0308 & 3.6242 \\
+\caption{ Error Values Problem pg16 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 2894.7710 & 1923.3847 & 477.6732 \\
+Median & 6207.7392 & 7110.6749 & 5984.5739 \\
+Worst & 40511.8250 & 44496.3205 & 44496.3205 \\
+$v$ & 7473.2840 & 15031.1210 & 21139.3687 \\
+Mean & 7367.1487 & 9351.9432 & 8043.1433 \\
+std & 5818.0876 & 7551.1269 & 7348.4178 \\
+\caption{ Error Values Problem pg17 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 2.1306 & 2.1306 & 1.3938 \\
+Median & 12.7344 & 12.7344 & 12.1106 \\
+Worst & 53.5670 & 53.5670 & 53.5670 \\
+$v$ & 15868.0546 & 32241.6900 & 46672.7646 \\
+Mean & 18.1825 & 19.1353 & 17.9716 \\
+std & 16.7215 & 17.0583 & 16.5837 \\
+\caption{ Error Values Problem pg18 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 176.3800 & 176.3800 & 83.5577 \\
+Median & 9014.9207 & 10071.6045 & 8812.9095 \\
+Worst & 25795.5709 & 27595.8405 & 27595.8405 \\
+$v$ & 0.0000 & 0.0000 & 0.0000 \\
+Mean & 10763.9432 & 10657.3712 & 9518.6290 \\
+std & 6711.0403 & 6295.6632 & 6127.5905 \\
+\caption{ Error Values Problem pg19 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 2.3775 & 1.6641 & 1.7928 \\
+Median & 13.9637 & 14.0153 & 14.0387 \\
+Worst & 18.7977 & 19.2899 & 20.3884 \\
+$v$ & 372.5808 & 744.6046 & 1080.9807 \\
+Mean & 13.4996 & 14.0194 & 13.6350 \\
+std & 2.8694 & 3.1388 & 4.0482 \\
+\caption{ Error Values Problem pg20 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 419.7872 & 419.7872 & 93.5768 \\
+Median & 380.8611 & 353.2030 & 277.3817 \\
+Worst & 1158.6347 & 1189.5421 & 1189.5421 \\
+$v$ & 6175.5310 & 13937.0259 & 19574.5071 \\
+Mean & 356.3902 & 351.7531 & 338.1361 \\
+std & 188.8894 & 230.9163 & 236.2408 \\
+\caption{ Error Values Problem pg21 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 65.5104 & 65.5104 & 207.1046 \\
+Median & 10876.5517 & 9929.0339 & 9142.5026 \\
+Worst & 20124.4745 & 20124.4745 & 20124.4745 \\
+$v$ & 10276092734.9307 & 20424153500.3376 & 28446088579.5284 \\
+Mean & 10342.2866 & 8973.3606 & 8736.7511 \\
+std & 6082.5257 & 6008.8004 & 5972.2692 \\
+\caption{ Error Values Problem pg22 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 542.3697 & 640.3108 & 113.0409 \\
+Median & 1074.2023 & 1414.0194 & 1314.0519 \\
+Worst & 4142.9793 & 4142.9793 & 4142.9793 \\
+$v$ & 1421.4599 & 2924.8939 & 4194.8951 \\
+Mean & 1557.1415 & 1640.3503 & 1572.1789 \\
+std & 1237.1756 & 1232.4922 & 1227.3820 \\
+\caption{ Error Values Problem pg23 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l}
+FES & $5 \times 10^{3}$ & $5 \times 10^{4}$ & $5 \times 10^{5}$ \\
+\hline
+Best & 0.0247 & 0.0035 & 0.0032 \\
+Median & 2.2576 & 2.1493 & 2.0569 \\
+Worst & 6.5111 & 6.5111 & 6.5111 \\
+$v$ & 1.3727 & 2.8359 & 5.2315 \\
+Mean & 2.2422 & 2.1665 & 2.0346 \\
+std & 0.9922 & 0.9255 & 1.0439 \\
+\caption{ Error Values Problem pg24 using Harmony Search }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg01 & 7.4628 & 49.6056 & 37.4628 & 51.4905 & 25.8178 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg01 & 6.7555 & 55.4842 & 23.2445 & 54.5777 & 23.0401 & 0.0333 & 0.0000 & -1.0000 \\
+500000 & pg01 & 4.0032 & 51.1064 & 21.3173 & 50.2408 & 25.4078 & 0.1000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg02 & 0.3526 & 0.6563 & 0.9285 & 0.6455 & 0.0577 & 1.0000 & 0.0000 & -1.0000 \\
+50000 & pg02 & 0.3526 & 0.6586 & 0.9248 & 0.6474 & 0.0578 & 1.0000 & 0.0000 & -1.0000 \\
+500000 & pg02 & 0.2877 & 0.6589 & 0.9221 & 0.6334 & 0.0882 & 1.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg03 & 0.0172 & 0.9352 & 1.0006 & 1.0251 & 0.8199 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg03 & 0.0172 & 0.9153 & 1.0006 & 1.3136 & 2.5030 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg03 & 0.0172 & 0.9379 & 1.0005 & 1.2545 & 2.1269 & 0.0333 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg04 & 462.9099 & 3120.3808 & 55417.6156 & 3269.6959 & 1301.7405 & 0.9333 & 0.0000 & -1.0000 \\
+50000 & pg04 & 284.1233 & 3120.3808 & 55417.6156 & 3118.8102 & 1318.4355 & 0.7667 & 0.0000 & -1.0000 \\
+500000 & pg04 & 74.1870 & 2469.1898 & 54384.2732 & 2836.7263 & 1467.0824 & 0.8000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg05 & 101.1785 & 1626.2138 & 12479.4859 & 1827.5098 & 1052.5422 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg05 & 101.1785 & 1712.4386 & 12479.4859 & 1919.6871 & 1133.1754 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg05 & 101.1785 & 1601.2256 & 12756.5802 & 1810.0506 & 1147.1473 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg06 & 85.8521 & 25913.5705 & 291442.6419 & 46510.0841 & 69045.8472 & 0.0333 & 0.0000 & -1.0000 \\
+50000 & pg06 & 24.4819 & 29272.2483 & 307229.3343 & 49175.9752 & 65271.4250 & 0.0333 & 0.0000 & -1.0000 \\
+500000 & pg06 & 4.2895 & 25939.5762 & 542439.3968 & 56617.1840 & 89665.6351 & 0.1667 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg07 & 59.5054 & 1748.3955 & 3660.7980 & 1741.8412 & 916.9713 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg07 & 59.5054 & 1797.0230 & 3660.7980 & 1773.7563 & 897.7698 & 0.0333 & 0.0000 & -1.0000 \\
+500000 & pg07 & 59.5054 & 1675.3482 & 3660.7980 & 1649.0710 & 983.3748 & 0.0333 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg08 & 0.0024 & 0.0958 & 43.3347 & 3.6318 & 13.6756 & 0.0333 & 0.0000 & -1.0000 \\
+50000 & pg08 & 0.0005 & 0.0960 & 43.3347 & 3.2168 & 11.0337 & 0.1000 & 0.0000 & -1.0000 \\
+500000 & pg08 & 0.0000 & 0.0958 & 43.3347 & 5.0206 & 25.6233 & 0.2000 & 0.0333 & 13957012.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg09 & 1.9500 & 115970.9295 & 8549372.8320 & 1324540.1983 & 2332727.3396 & 0.0333 & 0.0000 & -1.0000 \\
+50000 & pg09 & 1.9279 & 149701.5300 & 9426896.7127 & 1142555.7329 & 2100298.2598 & 0.0333 & 0.0000 & -1.0000 \\
+500000 & pg09 & 0.9388 & 96061.7546 & 9426896.7127 & 926263.4281 & 1863969.2344 & 0.1667 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg10 & 1084.5695 & 9361.8983 & 33802.1668 & 9507.4273 & 5391.3719 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg10 & 287.6622 & 9096.3359 & 33802.1668 & 9212.6608 & 4703.0339 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg10 & 287.6622 & 8702.0004 & 33802.1668 & 8909.3346 & 4405.6902 & 0.0333 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg11 & 0.0051 & 0.1784 & 2.6167 & 0.2393 & 0.2420 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg11 & 0.0026 & 0.1975 & 3.2193 & 0.3178 & 0.3466 & 0.0333 & 0.0000 & -1.0000 \\
+500000 & pg11 & 0.0002 & 0.1909 & 3.2193 & 0.2976 & 0.3215 & 0.1667 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg12 & 0.0013 & 0.1800 & 1.4780 & 0.1873 & 0.1316 & 0.3333 & 0.0000 & -1.0000 \\
+50000 & pg12 & 0.0000 & 0.1738 & 1.4780 & 0.1800 & 0.1099 & 0.3000 & 0.0333 & 1459395.0000 \\
+500000 & pg12 & 0.0000 & 0.1701 & 1.4780 & 0.1757 & 0.1152 & 0.3667 & 0.1333 & 3452603.7500 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg13 & 0.0046 & 0.9201 & 21.6533 & 1.7627 & 3.8828 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg13 & 0.0046 & 0.9297 & 3761.8884 & 64.8564 & 485.4003 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg13 & 0.0046 & 0.9544 & 3761.8884 & 43.8112 & 396.3454 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg14 & 186.0244 & 640.7399 & 281.5542 & 625.3396 & 133.3014 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg14 & 186.0244 & 670.7961 & 281.5542 & 656.1622 & 139.5427 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg14 & 186.0244 & 669.4217 & 281.5542 & 642.2004 & 160.6654 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg15 & 4.3884 & 30.0614 & 1952.7367 & 46.0877 & 46.2527 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg15 & 0.3714 & 30.0614 & 1952.7367 & 44.7792 & 40.6379 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg15 & 0.0022 & 28.9898 & 1955.7352 & 43.4297 & 41.1349 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg16 & 0.0050 & 0.9540 & 5.9643 & 1.3328 & 1.8176 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg16 & 0.0050 & 0.9647 & 17.6472 & 1.6309 & 3.0308 & 0.0333 & 0.0000 & -1.0000 \\
+500000 & pg16 & 0.0050 & 0.9156 & 21.5659 & 1.7188 & 3.6242 & 0.1667 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg17 & 229.1311 & 6207.7392 & 40511.8250 & 7367.1487 & 5818.0876 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg17 & 229.1311 & 7110.6749 & 44496.3205 & 9351.9432 & 7551.1269 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg17 & 29.9285 & 5984.5739 & 44496.3205 & 8043.1433 & 7348.4178 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg18 & 1.0020 & 12.7344 & 53.5670 & 18.1825 & 16.7215 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg18 & 0.1687 & 12.7344 & 53.5670 & 19.1353 & 17.0583 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg18 & 0.1687 & 12.1106 & 53.5670 & 17.9716 & 16.5837 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg19 & 176.3800 & 9014.9207 & 25795.5709 & 10763.9432 & 6711.0403 & 1.0000 & 0.0000 & -1.0000 \\
+50000 & pg19 & 176.3800 & 10071.6045 & 27595.8405 & 10657.3712 & 6295.6632 & 1.0000 & 0.0000 & -1.0000 \\
+500000 & pg19 & 83.5577 & 8812.9095 & 27595.8405 & 9518.6290 & 6127.5905 & 1.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg20 & 2.3775 & 13.9637 & 18.7977 & 13.4996 & 2.8694 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg20 & 1.6641 & 14.0153 & 19.2899 & 14.0194 & 3.1388 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg20 & 1.1950 & 14.0387 & 20.3884 & 13.6350 & 4.0482 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg21 & 13.5536 & 380.8611 & 1158.6347 & 356.3902 & 188.8894 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg21 & 9.7865 & 353.2030 & 1189.5421 & 351.7531 & 230.9163 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg21 & 0.6622 & 277.3817 & 1189.5421 & 338.1361 & 236.2408 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg22 & 65.5104 & 10876.5517 & 20124.4745 & 10342.2866 & 6082.5257 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg22 & 11.4994 & 9929.0339 & 20124.4745 & 8973.3606 & 6008.8004 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg22 & 11.4994 & 9142.5026 & 20124.4745 & 8736.7511 & 5972.2692 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg23 & 89.3384 & 1074.2023 & 4142.9793 & 1557.1415 & 1237.1756 & 0.0000 & 0.0000 & -1.0000 \\
+50000 & pg23 & 7.0081 & 1414.0194 & 4142.9793 & 1640.3503 & 1232.4922 & 0.0000 & 0.0000 & -1.0000 \\
+500000 & pg23 & 7.0081 & 1314.0519 & 4142.9793 & 1572.1789 & 1227.3820 & 0.0000 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+\begin{center}
+\begin{longtable}{l l l l l l l l l l}
+\textbf{Max FES} & \textbf{Prob.} & \textbf{Best} & \textbf{Median} & \textbf{Worst} & \textbf{Mean} & \textbf{Std} & \textbf{FR} & \textbf{SR} & \textbf{SP} \\
+\hline
+5000 & pg24 & 0.0247 & 2.2576 & 6.5111 & 2.2422 & 0.9922 & 0.9667 & 0.0000 & -1.0000 \\
+50000 & pg24 & 0.0035 & 2.1493 & 6.5111 & 2.1665 & 0.9255 & 0.8667 & 0.0000 & -1.0000 \\
+500000 & pg24 & 0.0032 & 2.0569 & 6.5111 & 2.0346 & 1.0439 & 0.8667 & 0.0000 & -1.0000 \\
+
+\caption{ Harmony Search. Number of FES to achieve the fixed accuracy level ($f(\mathbf{x}) - f(\mathbf{x}^{*}) \leq 0.0001$), Success Rate, Feasible Rate and Success Performance }
+\end{longtable}
+\end{center}
+
+
+\end{document}

@@ -26,7 +26,7 @@ class ArtificialBeeColony(PopulationBasedHeuristics):
         r = choice(list(set(self.index_list) - {i}))
         x_rand = self.population[r]
         return self.fix_ranges({
-            "x": [xi["x"][j] + uniform(-1, 1) * (xi["x"][j] - x_rand["x"][j]) if random() < self.mr else xi["x"][j]
+            "x": [xi["x"][j] + random() * (xi["x"][j] - x_rand["x"][j]) if random() < self.mr else xi["x"][j]
                   for j in range(self.dimension)]
         })
 
@@ -38,11 +38,11 @@ class ArtificialBeeColony(PopulationBasedHeuristics):
         :return dict: New food source
         """
         return self.fix_ranges({
-            "x": [xi["x"][j] + uniform(-1, 1) * (xi["x"][j] - x_best["x"][j]) if random() < self.mr else xi["x"][j]
+            "x": [xi["x"][j] + random() * (xi["x"][j] - x_best["x"][j]) if random() < self.mr else xi["x"][j]
                   for j in range(self.dimension)]
         })
 
-    def smart_fight(self, xi: dict, x_best: dict, i: int):
+    def smart_fight(self, xi: dict, x_best: dict):
         """
         Generates new vector from a food source xi and from a random vector
         :param dict xi: Current food source
@@ -50,22 +50,25 @@ class ArtificialBeeColony(PopulationBasedHeuristics):
         :param int i: Current food source index
         :return dict: New food source
         """
-        phi = random()
-        r = choice(list(set(self.index_list) - {i}))
+        r = choice(self.index_list)
         x_rand = self.population[r]
-        return self.fix_ranges({
-            "x": [xi["x"][j] + phi * (x_rand["x"][j] - xi["x"][j]) +
-                  (1 - phi) * (x_best["x"][j] - xi["x"][j])
-                  for j in range(self.dimension)]
-        })
+        x_new = self.evaluate_individual(self.fix_ranges(
+            {"x": [xi["x"][j] + phi * (x_rand["x"][j] - xi["x"][j]) + (1 - phi) * (x_best["x"][j] - xi["x"][j])
+                   for j, phi in zip(range(self.dimension), [uniform(-1, 1) for _ in range(self.dimension)])]}))
+
+        if self.comparison(x_new, xi)["x"] == x_new:
+            return x_new
+        else:
+            return {**xi, "trials": xi.get("trials", 0) + 1}
 
     def mutation(self) -> List[dict]:
         """
         New candidate solutions generation
         :return List[dict]: Returns new candidate solutions
         """
-        return self.evaluate_population([self.new_vector(self.population[i], i)
-                                         for i in range(self.population_size)])
+        return self.evaluate_population([{
+            **self.new_vector(self.population[i], i), "trials": self.population[i].get("trials", 0)}
+            for i in range(self.population_size)])
 
     def workers(self, worker_bee: dict, bee: dict) -> dict:
         """
@@ -89,7 +92,8 @@ class ArtificialBeeColony(PopulationBasedHeuristics):
         :best_bee dict: Current best bee
         :return dict: New bee
         """
-        onlooker_bee = self.evaluate_individual(self.new_vector_from_best(bee, best_bee))
+        onlooker_bee = {**self.evaluate_individual(self.new_vector_from_best(bee, best_bee)),
+                        "trials": bee.get("trials", 0)}
         return self.workers(onlooker_bee, bee)
 
     def scouts(self, bee: dict, best_bee: dict) -> dict:
@@ -100,8 +104,8 @@ class ArtificialBeeColony(PopulationBasedHeuristics):
         :return dict: New bee
         """
         if bee.get("trials", 0) >= self.max_trials:
-            scout_bee = self.new_vector_from_best(bee, best_bee)
-            return {**scout_bee, "trials": 0}
+            scout_bee = self.smart_fight(bee, best_bee)
+            return self.evaluate_individual({**scout_bee, "trials": 0})
         return bee
 
     def population_enhancement(self) -> None:

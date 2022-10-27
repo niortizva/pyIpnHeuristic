@@ -17,7 +17,7 @@ import json
 def tune_function(algorithm, problem_parameters, pop_size, params):
     def objective_function(*x, get_algorithm=False):
         # iterations = 5 * 10**3
-        iterations = 1
+        iterations = 50
         algorithm_params = {key: xi for param, xi in zip(params, x) for key in param.keys()}
         algorithm_class = algorithm["class"](
             problem_parameters[1].get("objective_function"),
@@ -27,11 +27,12 @@ def tune_function(algorithm, problem_parameters, pop_size, params):
             population_size=pop_size,
             epsilon=10 ** -4,
             smooth=True,
+            max_fes=5 * 10**9,
             **algorithm_params
         )
 
-        algorithm_class.search(iterations=iterations)
-        best = algorithm_class.get_best(algorithm_class.population)
+        algorithm_class.search(iterations=iterations, save_history=True)
+        best = algorithm_class.history[-1]
         error = abs(best["fx"] - problem_parameters[1]["fx"]) / abs(problem_parameters[1]["fx"])
         if get_algorithm:
             return algorithm_class
@@ -116,19 +117,23 @@ def tuning():
                 epsilon=10 ** -4,
                 alpha=10 ** -2
             )
-            tunner.search(iterations=1)
+            tunner.search(iterations=200, save_history=True)
             solution = tunner.population[-1]["x"]
             solution_params = {key: float("{:.4f}".format(xi)) for param, xi in zip(algorithm["params"], solution)
                                for key in param.keys()}
             algorithm_class = objective_function(*solution, get_algorithm=True)
+            _error = abs(problem_parameters[1]["fx"] - problem_parameters[1]["objective_function"](
+                *algorithm_class.history[-1]["x"])) / abs(problem_parameters[1]["fx"])
+            print(r"""algorithm: {}, problem: {}, error: {:.3f} % - Done!""".format(
+                algorithm["name"], problem_parameters[0], 100 * _error))
             tunner_json.append({
                 "algorithm": algorithm["name"],
                 "problem_name": problem_parameters[0],
                 "population_size": population_size,
-                "error": objective_function(*tunner.get_best(tunner.population)["x"]),
+                "error": objective_function(*tunner.history[-1]["x"]),
                 "*fx": problem_parameters[1]["fx"],
                 "fx": problem_parameters[1]["objective_function"](
-                    *algorithm_class.get_best(algorithm_class.population)["x"]),
+                    *algorithm_class.history[-1]["x"]),
                 "solution": {**solution_params},
             })
 
